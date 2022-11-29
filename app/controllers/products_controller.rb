@@ -27,4 +27,5 @@ class ProductsController < ApplicationController
   end
 
   def set_product
+  end
 end
