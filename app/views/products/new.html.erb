@@ -3,6 +3,6 @@
 <%= simple_form_for [@product] do |f| %>
   <%= f.input :item, label: 'whats your item?' %>
   <%= f.input :description, label: 'brief description of the item' %>
-  <%= f.input :price, label: '?' %>
+  <%= f.input :price, label: 'Set a selling price', placeholder: "£" %>
   <%= f.button :submit %>
 <% end %>

@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get 'transactions/:id/confirmation', to: 'transactions#confirmation', as: 'confirmation'
 
   get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
-
   get 'about', to: 'pages#about_us', as: 'aboutpage'
+
 end
