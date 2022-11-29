@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
 
-  get 'about', to: 'pages#about_us', as: 'about_us'
+  get 'about', to: 'pages#about_us', as: 'aboutpage'
 end
