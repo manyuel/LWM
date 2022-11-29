@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!
+  before_action :set_product, only: %i[show destroy confirm reject]
 
   def index
     @products = Product.all
@@ -18,6 +20,11 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to _path, status: :see_other
+  end
+
+  def new
+    @product = Product.new
+    @user = User.find(params[:user_id])
   end
 
   private
