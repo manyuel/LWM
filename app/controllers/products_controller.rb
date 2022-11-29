@@ -8,7 +8,11 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @user = User.find(params[:user_id])
     @product.user = @user
-    @product.save
+    if @product.save!
+      redirect_to
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -21,4 +25,6 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:item, :description, :price)
   end
+
+  def set_product
 end
