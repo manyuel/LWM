@@ -7,12 +7,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :users, only: %i[new destroy]
-  resources :products, only: %i[index show new create update edit destroy]
+  resources :products
   get 'transactions/:id/confirmation', to: 'transactions#confirmation', as: 'confirmation'
 
   get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
 
   get 'about', to: 'pages#about_us', as: 'about_us'
-
-
 end
