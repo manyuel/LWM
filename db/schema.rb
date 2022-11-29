@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_114900) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_115118) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_114900) do
     t.string "item"
     t.text "description"
     t.float "price"
-    t.boolean "is_sold"
+    t.boolean "is_sold", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -55,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_114900) do
 
   create_table "transactions", force: :cascade do |t|
     t.date "date"
-    t.boolean "is_delivered"
+    t.boolean "is_delivered", null: false
     t.bigint "user_id", null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
