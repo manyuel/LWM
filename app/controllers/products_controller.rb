@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def show
+  end
+
   def create
     @product = Product.new(product_params)
     @product.user = @user
@@ -23,7 +26,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to _path, status: :see_other
+    redirect_to products_path, status: :see_other
   end
 
   private
