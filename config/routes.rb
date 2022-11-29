@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :users, only: %i[new destroy] do
+    resources :products, only: %i[new create update edit destroy index show]
+  end
+  get 'transactions/:id/confirmation', to: 'transactions#confirmation', as: 'confirmation'
 end
