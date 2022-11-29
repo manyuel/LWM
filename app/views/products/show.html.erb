@@ -1,0 +1,9 @@
+<h1>Listing Details</h2>
+
+<div>
+  <h4> Product: <%= @product.item  %></h4>
+  <h4> Price: £<%= @product.price %></h4>
+  <h4> Brief description: <%= @product.description %></h4>
+</div>
+
+<%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
