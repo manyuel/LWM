@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :products, only: %i[new create update edit destroy index show]
   end
   get 'transactions/:id/confirmation', to: 'transactions#confirmation', as: 'confirmation'
+  get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
 end
