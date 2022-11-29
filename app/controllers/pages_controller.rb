@@ -4,6 +4,11 @@ class PagesController < ApplicationController
   def home
   end
 
+
+  def user_dash
+  end
+
   def about_us
   end
+
 end
