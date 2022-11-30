@@ -6,4 +6,7 @@
   <h4> Brief description: <%= @product.description %></h4>
 </div>
 
+
+<%= button_to "Add to basket", product_transactions_path(@product), method: :post %>
+
 <%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
