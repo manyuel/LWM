@@ -1,0 +1,8 @@
+<h1>My Listed Items</h1>
+
+<% @listed_items.each do |product| %>
+  <%= link_to product.item, product_path(product) %>
+<% end %>
+
+<p>Links to redirect (where?)</p>
+<p>Verify listing works</p>

@@ -1,13 +1,17 @@
-<h1>Basket</h1>
+<div class="container">
+  <div class="basket">
+    <h1>Basket</h1>
+    <ul>
+    <% @transactions.each do |transaction| %>
+      <li><%= transaction.product.item %>:
+      £<%= transaction.product.price %></li>
+      <%= link_to 'Delete', transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <% end %>
+    </ul>
 
-<ul>
-<% @transactions.each do |transaction| %>
-  <li><%= transaction.product.item %>:
-  £<%= transaction.product.price %></li>
-  <%= link_to 'Delete', transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-<% end %>
-</ul>
+    <p>Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price }.sum %>
 
-<p>Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price }.sum %>
+    <%= link_to "#", class:"button" %>
+  </div>
 
-<%= button_to "Checkout", method: :get %>
+</div>
