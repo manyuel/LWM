@@ -8,5 +8,6 @@
 
 
 <%= button_to "Add to basket", product_transactions_path(@product), method: :post %>
+<%= button_to "Back to listings", products_path, method: :get %>
 
 <%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
