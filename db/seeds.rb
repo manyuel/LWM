@@ -14,7 +14,6 @@ User.destroy_all
 
 puts "Creating users..."
 
-
 products = ["Elephant Bike", "Mug", "Frying Pan"]
 conditions = ["excellent", "good", "okay", "bad"]
 
@@ -31,7 +30,7 @@ puts "User Created"
 
 puts "Creating Product..."
 
-product = Product.create!(
+product = Product.new(
   item: products[i],
   price: rand(1.99..49.99),
   description: "#{products[i]} in #{conditions.sample} condition. No longer needed as I'm moving back home",
@@ -47,5 +46,6 @@ product.photos.attach(io: product_file2, filename: "#{products[i].strip.gsub(/\s
 product_file3 = open("app/assets/images/#{products[i].strip.gsub(/\s+/, "_")}3.jpg")
 product.photos.attach(io: product_file3, filename: "#{products[i].strip.gsub(/\s+/, "_")}3.jpg", content_type: 'image/jpg')
 
+product.save!
 puts "Product Created"
 puts "Done!"

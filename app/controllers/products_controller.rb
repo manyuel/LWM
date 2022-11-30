@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_product, only: %i[show destroy confirm reject]
-  before_action :set_user, except: %i[index show destroy]
+  before_action :set_user, only: %i[index show destroy]
 
   def index
     @products = Product.all
@@ -9,6 +9,8 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    # @user = User.find(params[:user_id])
+    redirect_to products_path, status: :see_other
   end
 
   def show
@@ -29,11 +31,18 @@ class ProductsController < ApplicationController
     redirect_to _path, status: :see_other
   end
 
-  def new
-    @product = Product.new
-    # @user = User.find(params[:user_id])
-    redirect_to products_path, status: :see_other
+  def listed_items
+    @listed_items = Product.where(user: current_user, is_sold: false)
   end
+
+  def sold_items
+    @sold_items = Product.where(user: current_user, is_sold: true)
+  end
+
+  def completed_orders
+    @completed_orders = Product.where(user: current_user, is_sold: true, is_delivered: true)
+  end
+
 
   private
 
