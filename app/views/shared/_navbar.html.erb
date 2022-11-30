@@ -4,6 +4,19 @@
       <%= image_tag "logo.png", class: "logo" %>
     <% end %>
 
+     <div class=<%= (current_page?(root_path) || current_page?(aboutpage_path)) ? "d-none" : "wrap"  %>>
+    <div class="search">
+        <%= form_with url: products_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :location,
+            params[:location],
+            class: "searchTerm",
+            placeholder: "Search for an item.."
+          %>
+          <%= submit_tag "Search", class: "searchButton" %>
+        <% end %>
+    </div>
+  </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
