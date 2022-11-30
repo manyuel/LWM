@@ -14,6 +14,7 @@ User.destroy_all
 
 puts "Creating users..."
 
+
 products = ["Elephant Bike", "Mug", "Frying Pan"]
 conditions = ["excellent", "good", "okay", "bad"]
 
@@ -47,5 +48,4 @@ product_file3 = open("app/assets/images/#{products[i].strip.gsub(/\s+/, "_")}3.j
 product.photos.attach(io: product_file3, filename: "#{products[i].strip.gsub(/\s+/, "_")}3.jpg", content_type: 'image/jpg')
 
 puts "Product Created"
-
 puts "Done!"

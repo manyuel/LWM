@@ -1,0 +1,22 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+
+.card-category{
+  height: 156px;
+  width: 260px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  p{
+    margin-top: 65px;
+  }
+
+}
