@@ -15,7 +15,7 @@ User.destroy_all
 puts "Creating users..."
 
 
-products = ["Elephant Bike", "Mug", "Frying Pan"]
+products = ["Elephant Bike", "Mug", "Frying Pan", "Record Player"]
 conditions = ["excellent", "good", "okay", "bad"]
 
 3.times do
@@ -31,7 +31,7 @@ conditions = ["excellent", "good", "okay", "bad"]
   puts "Creating Product..."
   i = 0
 
-  3.times do
+  4.times do
     product = Product.new(
       item: products[i],
       price: rand(1.99..49.99),
