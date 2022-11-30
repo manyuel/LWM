@@ -39,8 +39,8 @@ class ProductsController < ApplicationController
     @sold_items = Product.where(user: current_user, is_sold: true)
   end
 
-  def completed_orders
-    @completed_orders = Product.where(user: current_user, is_sold: true, is_delivered: true)
+  def purchased_items
+    @purchased_items = Product.where(user: current_user, is_sold: true, is_delivered: true)
   end
 
   private
