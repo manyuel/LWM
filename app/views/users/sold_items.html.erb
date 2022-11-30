@@ -1,1 +1,7 @@
 <h1>My Sold Items</h1>
+
+<% @products.where(users.id == current_user.id, is_sold: true).each do |product| %>
+  <%= link_to product.item, product_path(product) %>
+<% end %>
+
+<%= link_to "Add a new product", new_product_path%>

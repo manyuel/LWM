@@ -17,7 +17,9 @@ puts "Creating users..."
   user = User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.safe_email,
-    password: '123456'
+    password: '123456',
+    city: 'London',
+    batch: 1051
   )
   file = URI.open('https://thispersondoesnotexist.com/image')
   user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
