@@ -29,12 +29,6 @@ class ProductsController < ApplicationController
     redirect_to _path, status: :see_other
   end
 
-  def new
-    @product = Product.new
-    # @user = User.find(params[:user_id])
-    redirect_to products_path, status: :see_other
-  end
-
   private
 
   def product_params
