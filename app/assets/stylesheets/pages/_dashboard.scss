@@ -1,11 +1,26 @@
 .dashboard {
   background-image: url("Dashboard.png");
   background-size: cover;
-  height:100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
-.dashboardbutton {
-  background-color: #243038;
+// .dashboardbutton {
+//   background-color: #243038;
+//   font-family: Sans;
+//   color: white;
+//   top: 80px
+// }
+
+.first-txt {
+  position: absolute;
+  top: 22px;
+  left: 775px;
   color: white;
-  length: 50px
+  font-size: small;
+}
+
+.container1{
+  margin: 0;
+
 }

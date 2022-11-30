@@ -26,13 +26,19 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
+    redirect_to _path, status: :see_other
+  end
+
+  def new
+    @product = Product.new
+    # @user = User.find(params[:user_id])
     redirect_to products_path, status: :see_other
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:item, :description, :price)
+    params.require(:product).permit(:item, :description, :price, photos: [])
   end
 
   def set_product
