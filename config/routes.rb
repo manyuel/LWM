@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
   get 'about', to: 'pages#about_us', as: 'aboutpage'
   get 'basket', to: 'transactions#basket', as: 'basket'
+  resources :transactions, only: :destroy
 end

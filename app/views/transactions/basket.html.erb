@@ -2,18 +2,10 @@
 
 <ul>
 <% @transactions.each do |transaction| %>
-  <li type="checkbox"><%= transaction.product.item %>:
+  <li><%= transaction.product.item %>:
   £<%= transaction.product.price %></li>
+  <%= link_to 'Delete', transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 <% end %>
 </ul>
 
-<p>Total basket:</p>
-
-<form action="/action_page.php">
-  <% @transactions.each do |transaction| %>
-    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-    <label for="item1"><%= transaction.product.item %>:
-  £<%= transaction.product.price %></label><br>
-  <% end %>
-  <input type="submit" value="Remove from basket">
-</form>
+<p>Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price }.sum %>

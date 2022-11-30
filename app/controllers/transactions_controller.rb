@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_product, only: :create
+  before_action :set_transaction, only: [:create, :destroy]
 
   def create
     @transaction = Transaction.new(user_id: current_user.id, product_id: @product.id)
@@ -15,9 +15,18 @@ class TransactionsController < ApplicationController
     @transactions = Transaction.where(user_id: current_user.id)
   end
 
+  def destroy
+    @transaction.destroy
+    redirect_to basket_path, status: :see_other
+  end
+
   private
 
-  def set_product
-    @product = Product.find(params[:product_id])
+  def transaction_params
+    params.require(:transaction).permit(transactions: [])
+  end
+
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
   end
 end
