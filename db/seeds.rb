@@ -14,7 +14,6 @@ User.destroy_all
 
 puts "Creating users..."
 
-
 products = ["Elephant Bike", "Mug", "Frying Pan"]
 conditions = ["excellent", "good", "okay", "bad"]
 
@@ -55,3 +54,4 @@ conditions = ["excellent", "good", "okay", "bad"]
   end
   puts "Done!"
 end
+
