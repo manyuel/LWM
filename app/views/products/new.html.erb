@@ -1,8 +1,12 @@
-<h1>Add new a listing</h1>
+<h1>List a new product</h1>
 
-<%= simple_form_for [@product] do |f| %>
-  <%= f.input :item, label: 'whats your item?' %>
-  <%= f.input :description, label: 'brief description of the item' %>
-  <%= f.input :price, label: '?' %>
+<%= simple_form_for @product do |f| %>
+  <%= f.input :item, label: 'Product name:' %>
+  <%= f.input :description, label: 'Brief description of the product:' %>
+  <%= f.input :price, label: '£' %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <p>Have to select multiple pics at once - find a way to make it friendlier</p>
+  <p>Redirect: create another product or go back to index</p>
+
   <%= f.button :submit %>
 <% end %>

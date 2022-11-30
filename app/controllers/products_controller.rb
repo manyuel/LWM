@@ -24,13 +24,13 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:item, :description, :price)
+    params.require(:product).permit(:item, :description, :price, photos: [])
   end
 
   def set_product

@@ -6,16 +6,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :users, only: %i[new destroy]
+  resources :users, only: %i[new create show]
   resources :products, only: %i[index show new create update edit destroy]
   get 'transactions/:id/confirmation', to: 'transactions#confirmation', as: 'confirmation'
-<<<<<<< HEAD
-  get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
-=======
 
   get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
 
   get 'about', to: 'pages#about_us', as: 'about_us'
 
->>>>>>> af0a211d456edddc74382a722f5865ea5bf57b7d
 end
