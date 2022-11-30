@@ -14,6 +14,7 @@ User.destroy_all
 
 puts "Creating users..."
 
+
 products = ["Elephant Bike", "Mug", "Frying Pan"]
 conditions = ["excellent", "good", "okay", "bad"]
 
@@ -49,5 +50,4 @@ product.photos.attach(io: product_file3, filename: "#{products[i].strip.gsub(/\s
 product.save!
 
 puts "Product Created"
-
 puts "Done!"
