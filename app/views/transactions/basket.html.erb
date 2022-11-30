@@ -1,0 +1,19 @@
+<h1>Basket</h1>
+
+<ul>
+<% @transactions.each do |transaction| %>
+  <li type="checkbox"><%= transaction.product.item %>:
+  £<%= transaction.product.price %></li>
+<% end %>
+</ul>
+
+<p>Total basket:</p>
+
+<form action="/action_page.php">
+  <% @transactions.each do |transaction| %>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="item1"><%= transaction.product.item %>:
+  £<%= transaction.product.price %></label><br>
+  <% end %>
+  <input type="submit" value="Remove from basket">
+</form>
