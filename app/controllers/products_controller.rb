@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   end
 
   def purchased_items
-    @purchased_items = Product.where(user: current_user, is_sold: true, is_delivered: true)
+    @purchased_items = Transaction.where(user: current_user).map(&:product).select(&:is_delivered)
   end
 
   private
