@@ -6,6 +6,16 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  resources :users, only: %i[new create show]
+  resources :products do
+    resources :transactions, only: :create
+  end
+  resources :transactions, only: :destroy
+  get 'transactions/:id/confirmation', to: 'transactions#confirmation', as: 'confirmation'
+  get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
+  get 'about', to: 'pages#about_us', as: 'aboutpage'
+  get 'basket', to: 'transactions#basket', as: 'basket'
+
   get 'listeditems', to: 'products#listed_items', as: 'listeditems'
   get 'purchaseditems', to: 'products#purchased_items', as: 'purchaseditems'
   get 'solditems', to: 'products#sold_items', as: 'solditems'

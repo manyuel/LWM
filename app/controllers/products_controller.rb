@@ -43,7 +43,6 @@ class ProductsController < ApplicationController
     @completed_orders = Product.where(user: current_user, is_sold: true, is_delivered: true)
   end
 
-
   private
 
   def product_params

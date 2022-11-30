@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_transaction, only: [:create, :destroy]
+  before_action :set_product, only: :create
+  before_action :set_transaction, only: :destroy
 
   def create
     @transaction = Transaction.new(user_id: current_user.id, product_id: @product.id)
@@ -22,8 +23,8 @@ class TransactionsController < ApplicationController
 
   private
 
-  def transaction_params
-    params.require(:transaction).permit(transactions: [])
+  def set_product
+    @product = Product.find(params[:product_id])
   end
 
   def set_transaction
