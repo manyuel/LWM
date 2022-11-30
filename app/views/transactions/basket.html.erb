@@ -9,3 +9,5 @@
 </ul>
 
 <p>Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price }.sum %>
+
+<%= button_to "Checkout", method: :get %>
