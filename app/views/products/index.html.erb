@@ -1,6 +1,9 @@
 <h1>All Products available for sale</h1>
 
 
+<% @products.each do |product| %>
+   <%= link_to product.item, product_path(product) %>
+<% end %>
 
 <%= link_to "Add a new product", new_product_path %>
 <div class="row">
@@ -16,5 +19,3 @@
     </div>
   <% end %>
 </div>
-
-kmklkmlkqqq
