@@ -1,5 +1,5 @@
 <h1>List a new product</h1>
-
+<p>Simply fill out the form below to list a new item to sell</p>
 <%= simple_form_for @product do |f| %>
   <%= f.input :item, label: 'Product name:' %>
   <%= f.input :category, label: 'Category:', collection: Product::Category %>

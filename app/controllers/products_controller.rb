@@ -4,7 +4,12 @@ class ProductsController < ApplicationController
   before_action :set_user, only: %i[index show destroy]
 
   def index
-    @products = Product.where(category: params[:category]).where.not(user: @user, is_sold: true)
+    if params[:category].present?
+      @products = Product.where(category: params[:category]).where.not(user: @user, is_sold: true)
+      @products = Product.all if @products.empty?
+    else
+      @products = Product.where.not(user: @user, is_sold: true)
+    end
   end
 
   def new
