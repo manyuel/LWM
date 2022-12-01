@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  CATEGORY = ['Homeware', 'Electronics', 'Sports & Leisure', 'Other']
   belongs_to :user
   has_many :transactions
   validates :item, :price, :photos, presence: true
