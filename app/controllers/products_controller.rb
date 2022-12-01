@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_user, only: %i[index show destroy]
 
   def index
-    @products = Product.reject(user: @user, is_sold: true)
+    @products = Product.where(category: params[:category]).where.not(user: @user, is_sold: true)
   end
 
   def new
