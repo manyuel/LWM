@@ -54,4 +54,3 @@ conditions = ["excellent", "good", "okay", "bad"]
   end
   puts "Done!"
 end
-

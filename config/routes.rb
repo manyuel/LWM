@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about_us', as: 'aboutpage'
   get 'basket', to: 'transactions#basket', as: 'basket'
 
-  get 'listeditems', to: 'products#listed_items', as: 'listeditems'
-  get 'purchaseditems', to: 'products#purchased_items', as: 'purchaseditems'
-  get 'solditems', to: 'products#sold_items', as: 'solditems'
+  get 'myproducts', to: 'products#my_products', as: 'my_products'
+  get 'purchasedproducts', to: 'products#purchased_products', as: 'purchased_products'
 end

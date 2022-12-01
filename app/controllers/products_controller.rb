@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_user, only: %i[index show destroy]
 
   def index
-    @products = Product.all
+    @products = Product.reject(user: @user, is_sold: true)
   end
 
   def new
@@ -31,16 +31,13 @@ class ProductsController < ApplicationController
     redirect_to _path, status: :see_other
   end
 
-  def listed_items
-    @listed_items = Product.where(user: current_user, is_sold: false)
+  def my_products
+    @listed_products = Product.where(user: current_user, is_sold: false)
+    @sold_products = Product.where(user: current_user, is_sold: true)
   end
 
-  def sold_items
-    @sold_items = Product.where(user: current_user, is_sold: true)
-  end
-
-  def purchased_items
-    @purchased_items = Transaction.where(user: current_user).map(&:product).select(&:is_delivered)
+  def purchased_products
+    @purchased_products = Transaction.where(user: current_user).map(&:product).select(&:is_delivered)
   end
 
   private

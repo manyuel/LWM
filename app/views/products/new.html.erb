@@ -2,6 +2,7 @@
 
 <%= simple_form_for @product do |f| %>
   <%= f.input :item, label: 'Product name:' %>
+  <%= f.input :category, label: 'Category:', collection: Product::Category %>
   <%= f.input :description, label: 'Brief description of the product:' %>
   <%= f.input :price, label: '£' %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
