@@ -15,7 +15,7 @@ User.destroy_all
 
 puts "Creating users..."
 
-products = ["Elephant Bike", "Mug", "Frying Pan", "Record Player"]
+products = ["Elephant Bike", "Mug", "Frying Pan", "Record Player", "LaptopStand"]
 conditions = ["excellent", "good", "okay", "bad"]
 
 i = 0

@@ -1,24 +1,32 @@
 <div class="container">
-      <div class="basket">
-      <h1>Basket</h1>
-      </div>
-  <div class="card-product">
-     <%= image_tag "Mug1.jpg"%>
-      <div class="card-product-infos">
-      <ul>
-      <% @transactions.each do |transaction| %>
-        <li><%= transaction.product.item %>:
-        £<%= transaction.product.price %></li>
-        <%= link_to 'Delete', transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-      <% end %>
-      </ul>
-
-      <p>Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price }.sum %>
-
-    </div>
-
+  <div class="d-flex justify-content-center">
+    <h1>Basket</h1>
   </div>
-    <div class="checkout d-flex justify-content-center">
-      <%= link_to "#", class:"button"
+
+  <div class="d-flex justify-content-between mt-3">
+    <div class="basket">
+      <% @transactions.each do |transaction| %>
+        <div class="card-product d-flex justify-content-start mt-3" >
+          <%= cl_image_tag transaction.product.photos.first.key, width: 400, height: 350, crop: :fill %>
+            <ul style="list-style:none; width: 100%;" class="d-flex justify-content-between mt-1">
+              <div style="width: 75%">
+                <li><%= transaction.product.item %>
+                </li>
+              </div>
+                <div style="width: 25%" class="d-flex flex-column justify-content-between text-bold">
+                  <div class="d-flex justify-content-end pe-3">
+                    <%= link_to 'X', transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary" %>
+                  </div>
+                  £<%= transaction.product.price.round(2) %>
+                </div>
+            </ul>
+        </div>
+      <%end%>
     </div>
+
+    <div class="total mt-3">
+      <p class="mt-1">Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price.round(2) }.sum %>
+      <%= link_to "#", class:"button" %>
+    </div>
+  </div>
 </div>
