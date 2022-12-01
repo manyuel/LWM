@@ -8,12 +8,14 @@
 
 
 <%= button_to "Add to basket", product_transactions_path(@product), method: :post %>
-<%= link_to "Back to listings", products_path, method: :get %>
+<%= link_to "Back to listings", products_path %>
 
 
 <p>FOR MODAL/FRONT END
-<%= link_to "Continue shopping", products_path, method: :get %>
-<%= link_to "Go to basket", basket_path, method: :get %>
+<%= link_to "Continue shopping", products_path%>
+<%= link_to "Go to basket", basket_path %>
 /FRONT END</p>
 
-<%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
+<div class=<%= @product.user == current_user ? "" : "d-none" %>>
+  <%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
+</div>
