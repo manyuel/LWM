@@ -1,0 +1,10 @@
+<h1>My Products</h1>
+
+
+<h2>Purchased Products</h2>
+
+<% @purchased_products.each do |product| %>
+  <%= link_to product.item, product_path(product) %>
+<% end %>
+
+<p>Adequate CSS so that link disappears if it's empty? Or just "No purchases yet" meessage?</p>

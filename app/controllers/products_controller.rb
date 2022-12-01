@@ -5,10 +5,10 @@ class ProductsController < ApplicationController
 
   def index
     if params[:category].present?
-      @products = Product.where(category: params[:category])
+      @products = Product.where(category: params[:category]).where.not(user: @user, is_sold: true)
       @products = Product.all if @products.empty?
     else
-      @products = Product.all
+      @products = Product.where.not(user: @user, is_sold: true)
     end
   end
 
@@ -34,16 +34,13 @@ class ProductsController < ApplicationController
     redirect_to products_path, status: :see_other
   end
 
-  def listed_items
-    @listed_items = Product.where(user: current_user, is_sold: false)
+  def my_products
+    @listed_products = Product.where(user: current_user, is_sold: false)
+    @sold_products = Product.where(user: current_user, is_sold: true)
   end
 
-  def sold_items
-    @sold_items = Product.where(user: current_user, is_sold: true)
-  end
-
-  def purchased_items
-    @purchased_items = Product.where(user: current_user, is_sold: true, is_delivered: true)
+  def purchased_products
+    @purchased_products = Transaction.where(user: current_user).map(&:product).select(&:is_delivered)
   end
 
   private

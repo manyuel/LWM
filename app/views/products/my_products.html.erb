@@ -1,0 +1,17 @@
+<h1>My Products</h1>
+
+
+<h2>Listed Products</h2>
+
+<% @listed_products.each do |product| %>
+  <%= link_to product.item, product_path(product) %>
+<% end %>
+
+
+<h2>Sold Products</h2>
+
+<% @sold_products.each do |product| %>
+  <%= link_to product.item, product_path(product) %>
+<% end %>
+
+<p>Adequate CSS so that each category disappears if it's empty</p>
