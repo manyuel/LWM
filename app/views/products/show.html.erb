@@ -6,6 +6,15 @@
   <h4> Brief description: <%= @product.description %></h4>
 </div>
 
+<div>
+  <h4>Sold by: <%= @product.user.name %> <h4>From batch: <%= @product.user.batch %> </h4>
+  <h4>Link</h4>
+</div>
+
+
+
+
+
 
 <%= button_to "Add to basket", product_transactions_path(@product), method: :post %>
 <%= link_to "Back to listings", products_path %>

@@ -1,17 +1,26 @@
 <div class="container">
-  <div class="basket">
-    <h1>Basket</h1>
-    <ul>
-    <% @transactions.each do |transaction| %>
-      <li><%= transaction.product.item %>:
-      £<%= transaction.product.price %></li>
-      <%= link_to 'Delete', transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-    <% end %>
-    </ul>
+      <div class="basket">
+      <h1>Basket</h1>
+      </div>
+  <div class="card-product">
+     <%= image_tag "Mug1.jpg"%>
+      <div class="card-product-infos">
+      <ul>
+      <% @transactions.each do |transaction| %>
+        <li><%= transaction.product.item %>:
+        £<%= transaction.product.price %></li>
+        <%= link_to 'Delete', transaction_path(transaction), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      <% end %>
+      </ul>
 
-    <p>Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price }.sum %>
+      <p>Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price }.sum %>
 
-    <%= link_to "#", class:"button" %>
+    </div>
+
   </div>
-
+    <div class="checkout d-flex justify-content-center">
+      <%= link_to "#", class:"button"
+    </div>
 </div>
+
+<%= link_to "Go to checkout", checkout_path, method: :get %>
