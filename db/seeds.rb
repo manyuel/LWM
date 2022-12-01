@@ -15,6 +15,7 @@ User.destroy_all
 
 puts "Creating users..."
 
+
 products = ["Elephant Bike", "Mug", "Frying Pan", "Record Player", "LaptopStand"]
 conditions = ["excellent", "good", "okay", "bad"]
 
@@ -22,12 +23,16 @@ i = 0
 
 3.times do
   user = User.create!(
-    name: Faker::Name.name,
-    email: Faker::Internet.safe_email,
+    name: user_hash.keys.sample,
+    email: "user@email.com",
     city: "London",
     batch: 1051,
-    password: '123456'
+    password: '123456',
+    rating: rand(1..5)
   )
+
+  # photo: user_hash[user.name] (where do I insert this???)
+
   puts "User Created"
 
   puts "Creating Product..."

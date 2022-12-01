@@ -9,14 +9,25 @@
   <h4> Brief description: <%= @product.description %></h4>
 </div>
 
+<div>
+  <h4>Sold by: <%= @product.user.name %> <h4>From batch: <%= @product.user.batch %> </h4>
+  <h4>Link to somewhere...</h4>
+</div>
+
+
+
+
+
 
 <%= button_to "Add to basket", product_transactions_path(@product), method: :post %>
-<%= link_to "Back to listings", products_path, method: :get %>
+<%= link_to "Back to listings", products_path %>
 
 
 <p>FOR MODAL/FRONT END
-<%= link_to "Continue shopping", products_path, method: :get %>
-<%= link_to "Go to basket", basket_path, method: :get %>
+<%= link_to "Continue shopping", products_path%>
+<%= link_to "Go to basket", basket_path %>
 /FRONT END</p>
 
-<%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
+<div class=<%= @product.user == current_user ? "" : "d-none" %>>
+  <%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
+</div>

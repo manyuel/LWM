@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
   get 'about', to: 'pages#about_us', as: 'aboutpage'
   get 'basket', to: 'transactions#basket', as: 'basket'
+  get 'checkout', to: 'transactions#checkout', as: 'checkout'
 
   get 'myproducts', to: 'products#my_products', as: 'my_products'
   get 'purchasedproducts', to: 'products#purchased_products', as: 'purchased_products'
