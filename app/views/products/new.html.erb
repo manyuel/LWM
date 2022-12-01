@@ -2,9 +2,9 @@
 <p>Simply fill out the form below to list a new item to sell</p>
 <%= simple_form_for @product do |f| %>
   <%= f.input :item, label: 'Product name:' %>
-  <%= f.input :description, label: 'Brief description of the product:' %>
-  <%= f.input :price, label: '£' %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :description, label: 'Brief description and condition of the product:' %>
+  <%= f.input :price, label: 'Set your price', placeholder: "£" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Image Upload (minimum of 3)" %>
   <p>Have to select multiple pics at once - find a way to make it friendlier</p>
   <p>Redirect: create another product or go back to index</p>
   <%= f.button :submit %>
