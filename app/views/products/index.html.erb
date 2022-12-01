@@ -3,7 +3,7 @@
 </div>
 
 <div class="container d-flex justify-content-between">
-  <% @products. each do |product| %>
-    <% render product, product: product%>
+  <% @products.each do |product| %>
+    <%= render product, product: product%>
   <%end%>
-</div>  
+</div>
