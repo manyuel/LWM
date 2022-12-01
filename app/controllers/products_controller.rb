@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_product, only: %i[show destroy confirm reject]
-  before_action :set_user, only: %i[index show destroy]
+  before_action :set_user, only: %i[index show destroy create]
 
   def index
     if params[:category].present?
@@ -14,8 +14,6 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    # @user = User.find(params[:user_id])
-    redirect_to products_path, status: :see_other
   end
 
   def show
@@ -33,7 +31,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to _path, status: :see_other
+    redirect_to products_path, status: :see_other
   end
 
   def listed_items
