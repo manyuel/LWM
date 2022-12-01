@@ -1,37 +1,36 @@
 <div class="container d-flex flex-column align-items-center ">
   <div class="home">
     <h1>Le Wagon Marketplace</h1>
-    <p>Making students' lives easier</p>
+      <p>Making students' lives easier</p>
   </div>
-
-   <div class="wrap d-flex justify-content-center">
-          <input type="text" class="searchTerm" placeholder="Enter a location to start...">
-            <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
+  <div class="wrap d-flex justify-content-center">
+    <input type="text" class="searchTerm" placeholder="Enter a location to start...">
+      <button type="submit" class="searchButton">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+  <div class="blocker">
+  </div>
+  <div class="cards d-flex justify-content-center">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to products_path(category: "Sports & Leisure"), class: "text-decoration-none text-white" do %>
+        <p>Sports & Leisure</p>
+      <% end %>
     </div>
-   <div class="blocker">
-   </div>
-      <div class="cards d-flex justify-content-center">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-          <%= link_to products_path(category: "Sports & Leisure"), class: "text-decoration-none text-white" do %>
-              <p>Sports & Leisure</p>
-          <% end %>
-        </div>
-         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-          <%= link_to products_path(category: "Homeware"), class: "text-decoration-none text-white" do %>
-          <p>Homeware</p>
-          <% end %>
-        </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-          <%= link_to products_path(category: "Electronics"), class: "text-decoration-none text-white" do %>
-         <p> Electronics</p>
-         <% end %>
-      </div>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-          <%= link_to products_path(category: "Other"), class: "text-decoration-none text-white" do %>
-         <p>Other</p>
-        <% end %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+      <%= link_to products_path(category: "Homeware"), class: "text-decoration-none text-white" do %>
+        <p>Homeware</p>
+      <% end %>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+      <%= link_to products_path(category: "Electronics"), class: "text-decoration-none text-white" do %>
+        <p> Electronics</p>
+      <% end %>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+      <%= link_to products_path(category: "Other"), class: "text-decoration-none text-white" do %>
+        <p>Other</p>
+      <% end %>
     </div>
   </div>
 </div>

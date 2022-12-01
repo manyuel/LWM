@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get 'basket', to: 'transactions#basket', as: 'basket'
   get 'checkout', to: 'transactions#checkout', as: 'checkout'
 
-  get 'listeditems', to: 'products#listed_items', as: 'listeditems'
-  get 'purchaseditems', to: 'products#purchased_items', as: 'purchaseditems'
-  get 'solditems', to: 'products#sold_items', as: 'solditems'
+  get 'myproducts', to: 'products#my_products', as: 'my_products'
+  get 'purchasedproducts', to: 'products#purchased_products', as: 'purchased_products'
 end

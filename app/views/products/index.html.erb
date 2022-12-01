@@ -1,9 +1,13 @@
-<h1>All Products available for sale</h1>
+<div class="d-flex justify-content-center">
 
+  <h1> All Products available for sale <h1>
+</div>
 
-<% @products.each do |product| %>
-   <%= link_to product.item, product_path(product) %>
-   £<%= product.price %>
-<% end %>
+<%= link_to "Add a new product", new_product_path %>
 
-<%= link_to "List a new item", new_product_path %>
+<div class="container d-flex justify-content-between">
+  <% @products.each do |product| %>
+    <%= render product, product: product%>
+  <%end%>
+</div>
+
