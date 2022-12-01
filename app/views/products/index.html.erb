@@ -1,5 +1,11 @@
 <h1>All Products available for sale</h1>
 
+
+<% @products.each do |product| %>
+   <%= link_to product.item, product_path(product) %>
+<% end %>
+
+<%= link_to "Add a new product", new_product_path %>
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-lg-3 col-sm-6 mb-3">
@@ -17,7 +23,7 @@
            </div>
           <% end %>
           <% else %>
-            <img src="https://source.unsplash.com/random/400x250" alt="" class="">
+            <%=image_tag "https://source.unsplash.com/random/400x250" %>
           <% end %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

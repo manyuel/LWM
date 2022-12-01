@@ -9,6 +9,7 @@
 require 'open-uri'
 require 'faker'
 
+Transaction.destroy_all
 Product.destroy_all
 User.destroy_all
 
@@ -56,4 +57,3 @@ conditions = ["excellent", "good", "okay", "bad"]
   end
   puts "Done!"
 end
-
