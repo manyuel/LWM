@@ -9,6 +9,7 @@
 require 'open-uri'
 require 'faker'
 
+Transaction.destroy_all
 Product.destroy_all
 User.destroy_all
 
@@ -55,4 +56,6 @@ i = 0
   puts "Product Created"
 end
 
+
 puts "Done!"
+
