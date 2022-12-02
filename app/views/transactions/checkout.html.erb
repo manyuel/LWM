@@ -57,6 +57,9 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Checkout
           <div class="header-text httal htvam">
             <h1 id="header_1" class="form-header" data-component="header">Checkout</h1>
           </div>
+          <div>
+            <p>£<%= Transaction.basket_total(@transactions) %></p>
+          </div>
         </div>
       </li>
       <li class="form-line" data-type="control_fullname" id="id_3"><label class="form-label form-label-left form-label-auto" id="label_3" for="first_3"> Name </label>

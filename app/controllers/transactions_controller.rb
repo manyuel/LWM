@@ -21,6 +21,9 @@ class TransactionsController < ApplicationController
     redirect_to basket_path, status: :see_other
   end
 
+  def checkout
+    @transactions = Transaction.where(user_id: current_user.id)
+  end
 
   private
 
