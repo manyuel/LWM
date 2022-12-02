@@ -1,6 +1,99 @@
-<h1>Checkout</h1>
+<h1></h1>
 
 
 
+<% link_to "Buy now", root_path, method: :get, data: {turbo_method: :get, turbo_confirm: "Your purchase was successful! You will now be redirected to the homepage, Do not refresh this page"} %>
 
-<%= link_to "Buy now", root_path, method: :get, data: {turbo_method: :get, turbo_confirm: "Your purchase was successful! You will now be redirected to the homepage, Do not refresh this page"} %>
+<script src="https://cdn01.jotfor.ms/static/prototype.forms.js?3.3.37728" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.37728" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+	JotForm.extendsNewTheme = false;
+	JotForm.singleProduct = false;
+	JotForm.newPaymentUIForNewCreatedForms = true;
+	JotForm.newPaymentUI = true;
+	JotForm.clearFieldOnHide="disable";
+	JotForm.submitError="jumpToFirstError";
+
+	JotForm.init(function(){
+	/*INIT-START*/
+if (window.JotForm && JotForm.accessible) $('input_6').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_7').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_8').setAttribute('tabindex',0);
+      JotForm.alterTexts(undefined);
+	/*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,{"name":"heading","qid":"1","text":"Checkout","type":"control_head"},{"name":"submit2","qid":"2","text":"Submit","type":"control_button"},{"description":"","name":"name","qid":"3","text":"Name","type":"control_fullname"},null,null,{"description":"","name":"cardNumber","qid":"6","subLabel":"","text":"Card number","type":"control_textbox"},{"description":"","name":"expiryDate","qid":"7","subLabel":"","text":"Expiry Date (MM\u002FYY)","type":"control_textbox"},{"description":"","name":"cvvCode","qid":"8","subLabel":"","text":"CVV Code","type":"control_textbox"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Checkout","type":"control_head"},{"name":"submit2","qid":"2","text":"Submit","type":"control_button"},{"description":"","name":"name","qid":"3","text":"Name","type":"control_fullname"},null,null,{"description":"","name":"cardNumber","qid":"6","subLabel":"","text":"Card number","type":"control_textbox"},{"description":"","name":"expiryDate","qid":"7","subLabel":"","text":"Expiry Date (MM\u002FYY)","type":"control_textbox"},{"description":"","name":"cvvCode","qid":"8","subLabel":"","text":"CVV Code","type":"control_textbox"}]);}, 20);
+</script>
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=63763808623532087895e4de"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.37728" />
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.37728" />
+<style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+.form-label.form-label-auto {
+
+        display: inline-block;
+        float: left;
+        text-align: left;
+
+      }
+    /* Injected CSS Code */
+</style>
+
+<form class="jotform-form" action="https://submit.jotformeu.com/submit/223352491697060/" method="post" name="form_223352491697060" id="223352491697060" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="223352491697060" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" />
+  <div role="main" class="form-all mb-0">
+    <style>
+      .form-all:before
+      {
+        background: none;
+      }
+    </style>
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 id="header_1" class="form-header" data-component="header">Checkout</h1>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_fullname" id="id_3"><label class="form-label form-label-left form-label-auto" id="label_3" for="first_3"> Name </label>
+        <div id="cid_3" class="form-input" data-layout="full">
+          <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_3" name="q3_name[first]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" /> <label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_3" name="q3_name[last]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" /> <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_textbox" id="id_6"><label class="form-label form-label-left form-label-auto" id="label_6" for="input_6"> Card number </label>
+        <div id="cid_6" class="form-input" data-layout="half"> <input type="text" id="input_6" name="q6_cardNumber" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_6" /> </div>
+      </li>
+      <li class="form-line" data-type="control_textbox" id="id_7"><label class="form-label form-label-left form-label-auto" id="label_7" for="input_7"> Expiry Date (MM/YY) </label>
+        <div id="cid_7" class="form-input" data-layout="half"> <input type="text" id="input_7" name="q7_expiryDate" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_7" /> </div>
+      </li>
+      <li class="form-line" data-type="control_textbox" id="id_8"><label class="form-label form-label-left form-label-auto" id="label_8" for="input_8"> CVV Code </label>
+        <div id="cid_8" class="form-input" data-layout="half"> <input type="text" id="input_8" name="q8_cvvCode" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_8" /> </div>
+      </li>
+      <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
+    </ul>
+  </div>
+  <div class="checkout-button mt-3">
+      <%= link_to "Buy now", root_path, class: "text-light", data: {turbo_method: :get, turbo_confirm: "Your purchase was successful! You will now be redirected to the homepage, Do not refresh this page"} %>
+    </div>
+  <script>
+    JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+    JotForm.poweredByText = "Powered by Jotform";
+  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="223352491697060" />
+  <script type="text/javascript">
+    var all_spc = document.querySelectorAll("form[id='223352491697060'] .si" + "mple" + "_spc");
+    for (var i = 0; i < all_spc.length; i++)
+    {
+      all_spc[i].value = "223352491697060-223352491697060";
+    }
+  </script>
+
+
+
+</form><script type="text/javascript">JotForm.ownerView=true;</script><script type="text/javascript">JotForm.forwardToEu=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.37728"></script>
+<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.37728"></script>
