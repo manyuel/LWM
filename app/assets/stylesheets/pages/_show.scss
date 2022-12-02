@@ -1,5 +1,6 @@
 .show{
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .product-infos{
@@ -40,9 +41,11 @@
   // // align-items: center;
   // justify-content: space-between;
   width: 80%;
-  margin: 10px;
+  margin-left: 10px;
   padding-top: 25px;
   border-radius: 8px;
+  height: 350px;
+  padding-left: 15px;
   h4{
     font-size:17px;
     padding-left: 10px;
@@ -52,20 +55,7 @@
 
 }
 
-.card-product2{
-  overflow: hidden;
-  // height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 35%;
-  margin: 10px;
-  border-radius: 8px;
-
-  h4{
-    font-size:17px;
-    padding-top: 25px;
-    padding-left: 10px;
-
-  }
-
+.user-info{
+  display: flex;
+  justify-content: bottom;
 }

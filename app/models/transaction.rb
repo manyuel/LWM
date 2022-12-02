@@ -11,6 +11,6 @@ class Transaction < ApplicationRecord
   end
 
   def self.basket_total(transactions)
-    @transactions = transactions.map { |transaction| transaction.product.price.round(2) }.sum
+    @transactions = transactions.map { |transaction| transaction.product.price.round(2) }.sum.round(2)
   end
 end
