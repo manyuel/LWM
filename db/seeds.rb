@@ -16,19 +16,18 @@ User.destroy_all
 puts "Creating users..."
 
 
-products = ["Elephant Bike", "Mug", "Frying Pan", "Record Player", "LaptopStand"]
+products = ["Elephant Bike", "Mug", "Frying Pan", "Record Player", "Laptop Stand", "Mug Tree", "Cocktail Shaker", "Door Hook", "Plushie", "Laptop Sleeve", "Table", "Shaker", "Speaker", "Lamp", "Massage Gun", "Punching Bag", "Arm Weights", "Bean Bag", "Rug", "Jellyfish Lamp", "Hopper","Yoga Mat"]
 conditions = ["excellent", "good", "okay", "bad"]
 
 i = 0
 
-3.times do
+22.times do
   user = User.create!(
-    name: user_hash.keys.sample,
-    email: "user@email.com",
+    name: Faker::Name.name,
+    email: Faker::Internet.safe_email,
     city: "London",
     batch: 1051,
-    password: '123456',
-    rating: rand(1..5)
+    password: '123456'
   )
 
   # photo: user_hash[user.name] (where do I insert this???)
