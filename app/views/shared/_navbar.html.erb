@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "logo.png", class: "logo" %>
+      <%= image_tag "/images/logo.png", class: "logo" %>
     <% end %>
 
      <div class=<%= (current_page?(root_path) || current_page?(aboutpage_path)) ? "d-none" : "wrap"  %>>
