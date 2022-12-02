@@ -1,4 +1,4 @@
-# class ReviewsController < ApplicationController
+class ReviewsController < ApplicationController
 #   def new
 #     @review = Review.new
 #     @user = User.first
@@ -25,4 +25,4 @@
 #   def review_params
 #     params.require(:review).permit(:content, :rating)
 #   end
-# end
+end
