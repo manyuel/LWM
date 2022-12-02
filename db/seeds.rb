@@ -12,6 +12,7 @@ Transaction.destroy_all
 Product.destroy_all
 User.destroy_all
 
+
 user_hash = {
   'Ammar Amin' => 'https://avatars.githubusercontent.com/u/115180008?v=4',
   'Ali Asam' => 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665128960/syiabnh0kvrxxo7wtv5p.jpg',
@@ -51,7 +52,7 @@ user_hash = {
   'Safiyah Zaman' => 'https://avatars.githubusercontent.com/u/115396666?v=4'
 }
 
-products = ['Elephant Bike', 'Mug', 'Frying Pan', 'Record Player', 'Laptop Stand']
+products = ['Elephant Bike', 'Mug', 'Frying Pan', 'Record Player', 'Laptop Stand', "Mug Tree", "Cocktail Shaker", "Door Hook", "Plushie", "Laptop Sleeve", "Table", "Shaker", "Speaker", "Lamp", "Massage Gun", "Punching Bag", "Arm Weights", "Bean Bag", "Rug", "Jellyfish Lamp", "Hopper","Yoga Mat"]
 conditions = ['excellent', 'good', 'okay', 'bad']
 
 user_hash.keys.each do |u|

@@ -1,9 +1,17 @@
 .basket{
   text-align: center;
-  margin-top: 75px;
-  margin-bottom: 50px;
+  width: 70%;
 }
 
 .checkout{
-  margin-top: 35px;
+}
+
+.total{
+  text-align: center;
+  font-size: large;
+  width: 30%;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // justify-content: end;
+  // margin-left: 65%;
 }

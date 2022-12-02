@@ -29,9 +29,8 @@
   display: flex;
   // align-items: center;
   justify-content: space-between;
-  margin-top: 40px;
-  width: 50%;
-  margin: auto;
+  width: 80%;
+  // margin: auto;
 
 }
 
@@ -51,12 +50,15 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  font-size: large;
+  padding-left: 0;
 }
 
 .card-product-infos{
   text-align: center;
   padding: 50px;
+}
 
+.card-container1{
+  width: 100%;
 }
