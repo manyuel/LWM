@@ -1,25 +1,31 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= cl_image_tag "logo_ziaadl.jpg", class: "logo" %>
-    <% end %>
-
-     <div class=<%= (current_page?(root_path) || current_page?(aboutpage_path)) ? "d-none" : "wrap"  %>>
-    <div class="search">
-        <%= form_with url: products_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :location,
-            params[:location],
-            class: "searchTerm",
-            placeholder: "Search for an item.."
-          %>
-          <%= submit_tag "Search", class: "searchButton" %>
-        <% end %>
+    <div style="width=30%">
+      <%= link_to "/", class: "navbar-brand" do %>
+        <%= cl_image_tag "logo_ziaadl.jpg", class: "logo" %>
+      <% end %>
     </div>
-  </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class=<%= (current_page?(root_path) || current_page?(aboutpage_path)) ? "d-none" : "wrap" %>>
+      <div class="search" style="width=30%">
+          <%= form_with url: products_path, method: :get, class: "d-flex flex-column justify-content-center" do %>
+            <div class="d-flex" style="height: 35px !important;">
+              <%= text_field_tag :location,
+                params[:location],
+                class: "searchTerm",
+                placeholder: "Search for an item.."
+              %>
+              <%= submit_tag "Search", class: "searchButton" %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+
+    <div style="width=30%">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
 
 
   </div>
