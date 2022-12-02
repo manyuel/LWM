@@ -25,10 +25,12 @@
   </div>
     <% if user_signed_in? %>
       <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+
         <%= cl_image_tag "avatar_e7isyr.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
       </button>
       <% else %>
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
     <% end %>
 </div>
 
