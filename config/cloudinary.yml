@@ -3,7 +3,7 @@ development:
   api_key: "235797814912753"
   api_secret: "c-YclQW39jqU5whxIs-OudXiqTY"
   enhance_image_tag: true
-  static_image_support: false
+  static_image_support: true
 production:
   cloud_name: "dxleey3up"
   api_key: "235797814912753"
@@ -15,4 +15,4 @@ test:
   api_key: "235797814912753"
   api_secret: "c-YclQW39jqU5whxIs-OudXiqTY"
   enhance_image_tag: true
-  static_image_support: false
+  static_image_support: true
