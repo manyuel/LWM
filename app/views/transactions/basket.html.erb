@@ -24,11 +24,10 @@
       <%end%>
     </div>
 
-
+<% link_to "Buy now", root_path, method: :get %>
     <div class="total mt-3">
       <p class="mt-1">Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price.round(2) }.sum %>
-      <%= link_to "#", class:"button" %>
+      <%= link_to "Checkout", checkout_path, class:"button" %>
     </div>
   </div>
 </div>
-

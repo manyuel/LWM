@@ -21,6 +21,7 @@ class TransactionsController < ApplicationController
     redirect_to basket_path, status: :see_other
   end
 
+
   private
 
   def set_product
