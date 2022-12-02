@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div style="width=30%">
       <%= link_to "/", class: "navbar-brand" do %>
-        <%= image_tag url="https://res.cloudinary.com/dxleey3up/image/upload/v1669979622/development/logo_ziaadl.jpg", class: "logo" %>
+        <%= cl_image_tag "logo_ziaadl.jpg", class: "logo" %>
       <% end %>
     </div>
 
@@ -32,7 +32,7 @@
     <% if user_signed_in? %>
       <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
 
-        <%= image_tag url="https://res.cloudinary.com/dxleey3up/image/upload/v1669979848/development/avatar_e7isyr.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= cl_image_tag "avatar_e7isyr.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
       </button>
       <% else %>
