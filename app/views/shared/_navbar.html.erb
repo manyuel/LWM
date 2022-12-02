@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "/images/logo.png", class: "logo" %>
+      <%= cl_image_tag "logo_ziaadl.jpg", class: "logo" %>
     <% end %>
 
      <div class=<%= (current_page?(root_path) || current_page?(aboutpage_path)) ? "d-none" : "wrap"  %>>
@@ -25,7 +25,7 @@
   </div>
     <% if user_signed_in? %>
       <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-        <%= image_tag "avatar.png" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= cl_image_tag "avatar_e7isyr.png" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </button>
       <% else %>
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
