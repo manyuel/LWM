@@ -10,8 +10,7 @@
           <%= cl_image_tag transaction.product.photos.first.key, width: 400, height: 350, crop: :fill %>
             <ul style="list-style:none; width: 100%;" class="d-flex justify-content-between mt-1">
               <div style="width: 75%">
-                <li><%= transaction.product.item %>
-                </li>
+                <li><%= transaction.product.item %></li>
               </div>
                 <div style="width: 25%" class="d-flex flex-column justify-content-between text-bold">
                   <div class="d-flex justify-content-end pe-3">
@@ -27,8 +26,7 @@
 
     <div class="total mt-3">
       <p class="mt-1">Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price.round(2) }.sum %>
-      <%= link_to "#", class:"button" %>
+      <%= button_to checkout_path, class:"button" %>
     </div>
   </div>
 </div>
-
