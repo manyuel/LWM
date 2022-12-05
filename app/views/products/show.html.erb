@@ -39,7 +39,6 @@
       <div class="seller-avatar d-flex justify-content-left">
         <%= cl_image_tag @product.user.photo.key, class: "avatar" %>
         <h4 class="user-info align-text-center"><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
-        <%# <p class="text-gray-500 text-sm"><%= @product.user.rating %></p>
       </div>
       <div class="basket-b d-flex justify-content-bottom">
         <%= button_to "Add to basket", product_transactions_path(@product), method: :post, class:"button" %>
