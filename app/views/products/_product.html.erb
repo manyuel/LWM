@@ -29,7 +29,7 @@
     <div class="bg-white mb-4">
       <div class="w-full d-flex justify-content-around">
         <h1 class="font-semibold flex-fill"><%= product.item %></h1>
-        <h5 class="price mt-3 font-semibold flex-fill">£<%= product.price.round(2) %></h5>
+        <h5 class="price mt-3 font-semibold flex-fill">£<%= '%.2f' % product.price %></h5>
         <div class="flex items-center gap-2"></div>
       </div>
       <p class="text-gray-500 text-sm"><%= product.description %></p>
