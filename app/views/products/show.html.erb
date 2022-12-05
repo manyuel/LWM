@@ -1,4 +1,4 @@
-<%= link_to "Back", products_path, class: "text-decoration-none" %>
+<%= link_to "Back", products_path, class: "back-button text-decoration-none" %>
 
 
 
@@ -33,13 +33,16 @@
     </div>
   <div class="product-details d-flex">
     <div class="card-product1">
-      <h4><%= @product.item  %></h4>
-      <h4> <%= @product.description %></h4>
-      <h4> £<%= @product.price.round(2) %></h4>
-      <div class="d-flex justify-content-left">
+      <h4 class="product-name"><strong>Product:</strong> <%= @product.item  %></h4>
+      <h4 class="product-name"><strong>A little about this item:</strong> <%= @product.description %></h4>
+      <h4><strong>Buy now for:</strong> £<%= @product.price.round(2) %></h4>
+      <div class="seller-avatar d-flex justify-content-left">
         <%= cl_image_tag @product.user.photo.key, class: "avatar" %>
         <h4 class="user-info align-text-center"><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
-        <p class="text-gray-500 text-sm"><%= @product.user.rating %></p>
+        <%# <p class="text-gray-500 text-sm"><%= @product.user.rating %></p>
+      </div>
+      <div class="basket-b d-flex justify-content-bottom">
+        <%= button_to "Add to basket", product_transactions_path(@product), method: :post, class:"button" %>
       </div>
     </div>
   </div>
@@ -47,14 +50,8 @@
 
 
 
-
-
-<div class="basket-b">
-<%= button_to "Add to basket", product_transactions_path(@product), method: :post, class:"button" %>
-</div>
-
 <%# <%= link_to "Continue shopping", products_path, class: "text-decoration-none"%>
 <%# <%= link_to "Go to basket", basket_path, class: "text-decoration-none" %>
 <%# <div class=<%= @product.user == current_user ? "" : "d-none" %>
-  <%# <%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%> %>
+  <%# <%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
 <%# </div> %>

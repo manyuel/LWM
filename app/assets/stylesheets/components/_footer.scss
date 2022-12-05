@@ -1,3 +1,15 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+  bottom: 0;
+}
+
+.min-height {
+  min-height: 100vh;
+}
+
 .footer {
   background: #343A40;
   display: flex;
@@ -6,23 +18,29 @@
   height: 100px;
   padding: 0px 50px;
   color: white;
-  position: absolute;
   width: 100%;
   margin-top: 25px;
   height: 75px;
-
 }
+
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
   color: white;
-  opacity: 0.15;
+  opacity: 0.75;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  opacity: 1;
+  opacity: 5;
+  color: red;
+}
+
+.footer-text {
+  font-size: 12px;
+  padding-top: 10px;
+  opacity: 0.75;
 }
