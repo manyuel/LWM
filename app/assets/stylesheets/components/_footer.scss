@@ -29,11 +29,18 @@ html, body {
 }
 .footer-links a {
   color: white;
-  opacity: 0.15;
+  opacity: 0.75;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  opacity: 1;
+  opacity: 5;
+  color: red;
+}
+
+.footer-text {
+  font-size: 12px;
+  padding-top: 10px;
+  opacity: 0.75;
 }
