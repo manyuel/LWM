@@ -57,9 +57,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Checkout
           <div class="header-text httal htvam">
             <h1 id="header_1" class="form-header" data-component="header">Checkout</h1>
           </div>
-          <div>
-            <p>£<%= Transaction.basket_total(@transactions) %></p>
-          </div>
+
         </div>
       </li>
       <li class="form-line" data-type="control_fullname" id="id_3"><label class="form-label form-label-left form-label-auto" id="label_3" for="first_3"> Name </label>
@@ -78,6 +76,9 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"Checkout
       </li>
       <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
     </ul>
+      <div class="subtotal">
+        <p>Total to pay now: £<%= Transaction.basket_total(@transactions) %></p>
+      </div>
   </div>
   <div class="checkout-button mt-3">
       <%= link_to "Buy now", root_path, class: "text-light", data: {turbo_method: :get, turbo_confirm: "Your purchase was successful! You will now be redirected to the homepage, Do not refresh this page"} %>
