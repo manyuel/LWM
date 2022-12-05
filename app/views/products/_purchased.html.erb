@@ -1,0 +1,10 @@
+<div class="col-lg-4">
+  <%= link_to product_path(product), class: "text-decoration-none" do %>
+    <div class="card-product3 d-flex" >
+      <%= cl_image_tag product.photos.first.key, width: 400, height: 350, crop: :fill %>
+      <div class="ms-3 text-dark">
+        <%= product.item %>
+      </div>
+    </div>
+  <% end %>
+</div>

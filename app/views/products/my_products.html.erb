@@ -1,14 +1,18 @@
 <div class="container3 min-height">
+   <% if @listed_products.empty? %>
+    <div>
+      <p><%="You're yet to make any purchases!"%></p>
+    </div>
+  <% else %>
   <div>
     <h1>My Products</h1>
   </div>
-
   <div class="listed">
     <h2>Listed Products</h2>
-  </div>
-  <div class="btn">
+</div>
+<div class="btn">
     <%= link_to "Add a new product", new_product_path, class:"button" %>
-  </div>
+</div>
   <div class="d-flex justify-content-start mt-3">
     <div class="basket">
       <% @listed_products.each do |product| %>
@@ -32,17 +36,17 @@
         </div>
       <%end%>
     </div>
-  </div>
+  <% end %>
+</div>
 
-
- <div class="listed">
-  <div class="d-flex justify-content-center">
-    <%= link_to "Add a new product", new_product_path, class: "button" %>
-  </div>
- <div class="d-flex justify-content-center">
+<% if @sold_products.empty? %>
+  <div class="listed">
     <h2>Sold Products</h2>
   </div>
-
+    <div>
+      <p><%="You're yet to sell any items!"%></p>
+    </div>
+  <% else %>
   <div class="d-flex justify-content-between mt-3">
     <div class="basket">
       <% @sold_products.each do |product| %>
@@ -56,6 +60,7 @@
             </div>
             <div class="exit">
               <%= link_to 'X', products_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary" %>
+            <%end%>
             </div>
         </div>
       <%end%>
