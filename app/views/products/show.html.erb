@@ -33,8 +33,8 @@
     </div>
   <div class="product-details d-flex">
     <div class="card-product1">
-      <h4 class="product-name"><strong>Product:</strong> <%= @product.item  %></h4>
-      <h4 class="product-name"><strong>A little about this item:</strong> <%= @product.description %></h4>
+      <h3 class="product-name"><strong><%= @product.item  %></strong></h3>
+      <h4 class="product-name"><%= @product.description %></h4>
       <h4><strong>Buy now for:</strong> £<%= @product.price.round(2) %></h4>
       <div class="seller-avatar d-flex justify-content-left">
         <%= cl_image_tag @product.user.photo.key, class: "avatar" %>
