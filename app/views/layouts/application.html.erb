@@ -10,12 +10,14 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="min-height">
     <div class=<%= current_page?(dashboard_path) ? "d-none" : "" %>>
       <%= render "shared/navbar"%>
     </div>
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <div class="min-height">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
   </body>
-   <%= render "shared/footer" %>
 </html>

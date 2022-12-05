@@ -25,7 +25,7 @@
 
     <div class="total mt-3 d-flex flex-column justify-content-around">
       <p class="mt-1">Basket total: </p>£<%= @transactions.map { |transaction| transaction.product.price.round(2) }.sum.round(2) %>
-      <%= link_to "Checkout", checkout_path, class:"buynow-button text-light" %>
+      <%= link_to "Checkout", checkout_path, class:"buynow-button text-light my-3" %>
     </div>
   </div>
 </div>
