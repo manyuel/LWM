@@ -5,10 +5,10 @@ class ProductsController < ApplicationController
 
   def index
     if params[:category].present?
-      @products = Product.where(category: params[:category]).where.not(user_id: @user.id).where(is_sold: false)
+      @pagy, @products = pagy(Product.where(category: params[:category]).where.not(user_id: @user.id).where(is_sold: false))
       @products = Product.all if @products.empty?
     else
-      @products = Product.where.not(user_id: @user.id).where(is_sold: false)
+      @pagy, @products = pagy(Product.where.not(user_id: @user.id).where(is_sold: false))
     end
   end
 
@@ -41,6 +41,10 @@ class ProductsController < ApplicationController
 
   def purchased_products
     @purchased_products = Transaction.where(user: current_user).map(&:product).select(&:is_delivered)
+  end
+
+  def paginate
+    @pagy, @products = pagy(Product.all)
   end
 
   private
