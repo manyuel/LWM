@@ -1,8 +1,8 @@
-<h1>List a new product</h1>
-<p>Simply fill out the form below to list a new item to sell</p>
+<h1 class="d-flex justify-content-center">List a new product</h1>
+<p class="new-text d-flex justify-content-center my-3">Simply fill out the form below to list a new item to sell</p>
 
 
-<div>
+<div class="newform d-flex justify-content-center">
   <%= simple_form_for @product do |f| %>
     <%= f.input :item, label: 'Product name:' %>
 
