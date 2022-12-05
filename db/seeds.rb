@@ -73,7 +73,7 @@ puts "Creating Product..."
 
 20.times do
   user = User.all.sample
-  item = products.sample
+  item = products.shuffle!.pop
 
   product = Product.new(
     item: item,

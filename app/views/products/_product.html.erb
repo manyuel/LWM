@@ -8,13 +8,13 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= cl_image_tag product.photos.first.key, class:"d-block", width: 400, height: 250, crop: :fill %>
+          <%= cl_image_tag product.photos.first.key, class:"d-block", width: 417, height: 250, crop: :fill %>
         </div>
         <div class="carousel-item">
-          <%= cl_image_tag product.photos.second.key, class:"d-block", width: 400, height: 250, crop: :fill %>
+          <%= cl_image_tag product.photos.second.key, class:"d-block", width: 417, height: 250, crop: :fill %>
         </div>
         <div class="carousel-item">
-          <%= cl_image_tag product.photos.third.key, class:"d-block", width: 400, height: 250, crop: :fill %>
+          <%= cl_image_tag product.photos.third.key, class:"d-block", width: 417, height: 250, crop: :fill %>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel<%= product.id %>" data-bs-slide="prev">
@@ -26,13 +26,18 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <div class="w-full flex justify-between items-center mt-3">
-      <h1 class="font-semibold"><%= product.item %></h1>
-      <div class="flex items-center gap-2"></div>
-    </div>
-    <p class="text-gray-500 text-sm"><%= product.description %></p>
-    <div class="w-full flex justify-between items-center">
-      <p class="mt-2 font-semibold">£<%= product.price.round(2) %></p>
+    <div class="bg-white mb-4">
+      <div class="w-full d-flex justify-content-around">
+        <h1 class="font-semibold flex-fill"><%= product.item %></h1>
+        <h5 class="mt-3 font-semibold flex-fill">£<%= product.price.round(2) %></h5>
+        <div class="flex items-center gap-2"></div>
+      </div>
+      <p class="text-gray-500 text-sm"><%= product.description %></p>
+      <div class="d-flex justify-content-left align-items-center">
+        <%= cl_image_tag product.user.photo.key, class: "avatar" %>
+        <p class="text-gray-500 text-sm"><%= product.user.name %></p>
+        <p class="text-gray-500 text-sm"><%= product.user.rating %></p>
+      </div>
     </div>
   <% end %>
 </div>

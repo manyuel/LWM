@@ -13,7 +13,7 @@
               <%= text_field_tag :location,
                 params[:location],
                 class: "searchTerm",
-                placeholder: "Search for an item.."
+                placeholder: "Search for an item"
               %>
               <%= submit_tag "Search", class: "searchButton" %>
             </div>
@@ -30,10 +30,12 @@
 
   </div>
     <% if user_signed_in? %>
+      <%= link_to "All Products",products_path, class: "nav-link text-white mx-2" %>
+      <%= link_to "My Products",my_products_path, class: "nav-link text-white mx-2" %>
+      <%= link_to "Purchases",purchased_products_path, class: "nav-link text-white mx-2" %>
+      <%= link_to "Basket", basket_path, class: "nav-link text-white mx-2" %>
       <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-
-        <%= cl_image_tag "avatar_e7isyr.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
+        <%= cl_image_tag current_user.photo.key, class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </button>
       <% else %>
       <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
@@ -47,8 +49,6 @@
       <div class="offcanvas-body">
         <div>
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-          <%= link_to "Listings",my_products_path, class: "dropdown-item"%>
-          <%= link_to "Basket", basket_path, class: "dropdown-item"%>
         </div>
       </div>
     </div>

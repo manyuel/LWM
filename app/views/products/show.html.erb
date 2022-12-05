@@ -32,13 +32,16 @@
       </div>
     </div>
   <div class="product-details d-flex">
-  <div class="card-product1">
-    <h4><%= @product.item  %></h4>
-    <h4> <%= @product.description %></h4>
-    <h4> £<%= @product.price.round(2) %></h4>
-    <h4 class="user-info"><%= "#{@product.user.name} (##{@product.user.batch})"%>
-    <%# <%= cl_image_tag user.photo.key %>
-   </div>
+    <div class="card-product1">
+      <h4><%= @product.item  %></h4>
+      <h4> <%= @product.description %></h4>
+      <h4> £<%= @product.price.round(2) %></h4>
+      <div class="d-flex justify-content-left">
+        <%= cl_image_tag @product.user.photo.key, class: "avatar" %>
+        <h4 class="user-info align-text-center"><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
+        <p class="text-gray-500 text-sm"><%= @product.user.rating %></p>
+      </div>
+    </div>
   </div>
 </div>
 

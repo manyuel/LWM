@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     if params[:category].present?
-      @products = Product.where(category: params[:category]).where.not(user: @user, is_sold: true)
+      @products = Product.where(category: params[:category]).where.not(user: current_user.id, is_sold: true)
       @products = Product.all if @products.empty?
     else
       @products = Product.where.not(user: @user, is_sold: true)
