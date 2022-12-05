@@ -1,55 +1,57 @@
-<div class="container">
-  <div class="d-flex justify-content-center">
+<div class="container3">
+  <div>
     <h1>My Products</h1>
   </div>
 
-  <div class="d-flex justify-content-center">
+  <div class="listed">
     <h2>Listed Products</h2>
   </div>
-
-  <div class="d-flex justify-content-between mt-3">
+  <div class="btn">
+    <%= link_to "Add a new product", new_product_path, class:"button" %>
+  </div>
+  <div class="d-flex justify-content-start mt-3">
     <div class="basket">
       <% @listed_products.each do |product| %>
-        <div class="card-product d-flex justify-content-start mt-3" >
+        <div class="card-product2 d-flex" >
           <%= cl_image_tag product.photos.first.key, width: 400, height: 350, crop: :fill %>
-            <ul style="list-style:none; width: 100%;" class="d-flex justify-content-between mt-1">
-              <div style="width: 75%">
+            <div class="flex-column">
+                <ul style="list-style:none" class="ul">
                 <li><%= product.item %></li>
-              </div>
-                <div style="width: 25%" class="d-flex flex-column justify-content-between text-bold">
-                  <div class="d-flex justify-content-end pe-3">
-                    <%= link_to 'X', products_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary" %>
-                  </div>
-                  £<%= product.price.round(2) %>
-                </div>
-            </ul>
+                £<%= product.price.round(2) %>
+                </ul>
+                <%# <div style="width: 25%" class="d-flex flex-column justify-content-between text-bold"> %>
+                  <%# <div class="d-flex justify-content-end pe-3"> %>
+            </div>
+            <div class="exit">
+              <%= link_to 'X', products_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary mr-0" %>
+            </div>
+            <%# </div> %>
+                <%# </div> %>
+
+            <%# </div> %>
         </div>
       <%end%>
     </div>
   </div>
 
-  <%= link_to "Add a new product", new_product_path %>
-
- <div class="d-flex justify-content-center">
+ <div class="listed">
     <h2>Sold Products</h2>
   </div>
 
   <div class="d-flex justify-content-between mt-3">
     <div class="basket">
       <% @sold_products.each do |product| %>
-        <div class="card-product d-flex justify-content-start mt-3" >
+        <div class="card-product2 d-flex" >
           <%= cl_image_tag product.photos.first.key, width: 400, height: 350, crop: :fill %>
-            <ul style="list-style:none; width: 100%;" class="d-flex justify-content-between mt-1">
-              <div style="width: 75%">
-                <li><%= product.item %></li>
-              </div>
-                <div style="width: 25%" class="d-flex flex-column justify-content-between text-bold">
-                  <div class="d-flex justify-content-end pe-3">
-                    <%= link_to 'X', products_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary" %>
-                  </div>
-                  £<%= product.price.round(2) %>
-                </div>
-            </ul>
+            <div class="flex-column">
+              <ul style="list-style:none; width: 100%;" class="d-flex justify-content-between mt-1">
+              <li><%= product.item %></li>
+              £<%= product.price.round(2) %>
+              </ul>
+            </div>
+            <div class="exit">
+              <%= link_to 'X', products_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary" %>
+            </div>
         </div>
       <%end%>
     </div>
