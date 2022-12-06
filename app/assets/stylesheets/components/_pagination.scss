@@ -1,0 +1,44 @@
+a.page-link {
+  color: #41464b;
+  background: #fff;
+  border-width: 1px;
+  border-color: #dee2e6;
+  border-radius: 2px;
+
+}
+
+a.page-link:hover {
+  color: #41464b;
+  background: #e9ecef;
+  border-color: #dee2e6
+}
+
+a.page-link:focus{
+  color: #6c757d;
+  background: #e9ecef;
+  border-color: #dee2e6;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+a.page-item:current{
+  color: #fff;
+  background: #41464b;
+  border-color: #41464b;
+  background-color:#41464b;
+}
+
+a.page-link:disabled{
+  color: #6c757d;
+  background: #fff;
+  border-color: #dee2e6;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:hover,
+.pagination>.active>a:focus,
+.pagination>li>a:hover,
+.pagination>li>a:focus {
+    background-color: #41464b;
+    border-color: #41464b;
+    color: #fff;
+}
