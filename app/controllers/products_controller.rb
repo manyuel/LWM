@@ -1,20 +1,30 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_product, only: %i[show destroy confirm reject]
   before_action :set_user, only: %i[index show destroy create]
 
   def index
-    if params[:category].present?
+    # if params[:category].present?
+    #   @pagy, @products = pagy(Product.where(category: params[:category]).where.not(user_id: @user.id).where(is_sold: false))
+    #   @products = Product.all if @products.empty?
+    # else
+    #   @pagy, @products = pagy(Product.where.not(user_id: @user.id).where(is_sold: false))
+    # end
+
+    # if params[:buy].present?
+    #   @products = Product.where("item ILIKE ?", "%#{params[:buy]}%")
+    # else
+    #   @products = Product.all
+    # end
+
+
+    if params[:category].present? && params[:buy].present?
+      @pagy, @products = pagy(Product.where(category: params[:category]).where("item ILIKE ?", "%#{params[:buy]}%").where.not(user_id: @user.id).where(is_sold: false))
+    elsif params[:category].present? && params[:buy].nil?
       @pagy, @products = pagy(Product.where(category: params[:category]).where.not(user_id: @user.id).where(is_sold: false))
-      @products = Product.all if @products.empty?
+    elsif params[:buy].present? && params[:category].nil?
+      @pagy, @products = pagy(Product.where("item ILIKE ?", "%#{params[:buy]}%").where.not(user_id: @user.id).where(is_sold: false))
     else
       @pagy, @products = pagy(Product.where.not(user_id: @user.id).where(is_sold: false))
-    end
-
-    if params[:buy].present?
-      @products = Product.where("item ILIKE ?", "%#{params[:buy]}%")
-    else
-      @products = Product.all
     end
   end
 

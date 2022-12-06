@@ -100,9 +100,11 @@ end
 
 puts "Creating Product..."
 
+product_keys = products.keys
+
 20.times do
   user = User.all.sample
-  item = products.keys.shuffle!.pop
+  item = product_keys.shuffle!.pop
 
   product = Product.new(
     item: item,
