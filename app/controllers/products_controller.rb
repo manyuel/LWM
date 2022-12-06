@@ -40,7 +40,9 @@ class ProductsController < ApplicationController
   end
 
   def purchased_products
-    @purchased_products = Transaction.where(user: current_user).map(&:product).select(&:is_delivered)
+    unfinished_transactions = Transaction.where(user: current_user).where('is_delivered = ?', false)
+    unfinished_transactions_ids = unfinished_transactions.map { |transaction| transaction.product.id }
+    @purchased_products = Product.where(id: unfinished_transactions_ids)
   end
 
   def paginate

@@ -32,9 +32,26 @@
         £<%= @transactions.map { |transaction| transaction.product.price.round(2) }.sum.round(2) %>
       </div>
 
-      <%= link_to "Checkout", checkout_path, class:"buynow-button text-light my-3" %>
+      <button class="buynow-button text-light my-3" id="pay">Checkout</button>
     </div>
   </div>
 </div>
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  paymentButton = document.getElementById('pay');
+  paymentButton.addEventListener('click', () => {
+    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+    stripe.redirectToCheckout({
+      sessionId: '<%= @order.checkout_session_id %>'
+    });
+  });
+</script>
+
+
+
+
+
 
 <%# <% link_to "Buy now", root_path, method: :get %>
