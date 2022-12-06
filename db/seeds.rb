@@ -109,7 +109,7 @@ product_keys = products.keys
   product = Product.new(
     item: item,
     price: rand(1.99..49.99),
-    description: "#{item} in #{conditions.sample} condition. No longer needed as I'm moving back home",
+    description: "#{item} in #{conditions.sample} condition. No longer needed as I'm moving back home.",
     user_id: user.id,
     category: products[item]
   )
