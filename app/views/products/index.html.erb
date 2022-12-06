@@ -6,7 +6,7 @@
   <%= link_to "Add a new product", new_product_path, class: "button"  %>
 </div>
 
-<div class="container d-flex justify-content-between">
+<div class="container">
   <div class="row">
     <% @products.each do |product| %>
       <%= render product, product: product%>
