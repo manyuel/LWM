@@ -3,13 +3,22 @@
     <h1>Le Wagon Marketplace</h1>
     <p>The place for Wagoners to buy and sell items they no longer need to fellow alumni and incoming students</p>
     <div class="d-flex justify-content-center">
-      <input type="text" class="searchTerm" placeholder="Search here for a specific item...">
-        <button type="submit" class="searchButton">
-          <i class="fa fa-search"></i>
-        </button>
+      <%= form_with url: products_path, method: :get, class: "d-flex flex-column justify-content-center" do %>
+            <div class="d-flex" style="height: 35px !important;">
+              <%= text_field_tag :buy,
+                params[:buy],
+                class: "searchTerm",
+                placeholder: "Search for an item"
+              %>
+              <%= submit_tag "Search", class: "searchButton" %>
+                <i class="fa fa-search"></i>
+            </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+
 
 <div class="my-5">
   <div class="d-flex flex-column align-items-center ">
@@ -17,7 +26,7 @@
     </div>
     <div class="cards d-flex justify-content-center">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1321288902/photo/black-grey-wooden-plank-wall-texture-background-old-natural-pattern-of-dark-wood-grained.jpg?b=1&s=170667a&w=0&k=20&c=yhXBT7-l23YBvyKGDDGkajz2aMuyxaooJQtyaKnTt_M=)">
-          <%= link_to products_path(category: "All Products"), class: "text-decoration-none text-white" do %>
+          <%= link_to products_path, class: "text-decoration-none text-white" do %>
             <p>All Products</p>
           <% end %>
         </div>
