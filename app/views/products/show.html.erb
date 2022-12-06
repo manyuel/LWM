@@ -1,16 +1,20 @@
+
 <div class="min-height mt-3">
   <%= link_to "Back", products_path, class: "back-button text-decoration-none" %>
 
+<div class="show">
+  <h1>Listing Details</h1>
+</div>
 
-
-  <div class="show">
-    <h1>Listing Details</h1>
-  </div>
-
-  <div>
-    <div class="d-flex justify-content-center inline-block">
-      <div class="full-carousel">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div class="container">
+  <div class="row">
+      <div class="col-6">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
               <%= cl_image_tag @product.photos.first.key, class:"d-block", width: 600, height: 350, crop: :fill %>
@@ -22,37 +26,35 @@
               <%= cl_image_tag @product.photos.third.key, class:"d-block", width: 600, height: 350, crop: :fill %>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
       </div>
-    <div class="product-details d-flex">
-      <div class="card-product1">
-        <h3 class="product-name"><strong><%= @product.item  %></strong></h3>
-        <h4 class="product-name"><%= @product.description %></h4>
-        <h4><strong>Buy now for:</strong> £<%= @product.price.round(2) %></h4>
-        <div class="seller-avatar d-flex justify-content-left">
-          <%= cl_image_tag @product.user.photo.key, class: "avatar" %>
-          <h4 class="user-info align-text-center mt-2"><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
-        </div>
-        <div class="basket-b d-flex justify-content-bottom">
-          <%= button_to "Add to basket", product_transactions_path(@product), method: :post, class:"button" %>
+      <div class="product-details d-flex col-6">
+          <div class="card-product1">
+            <h3 class="product-name"><strong><%= @product.item  %></strong></h3>
+            <h4 class="product-name"><%= @product.description %></h4>
+            <h4><strong>Buy now for:</strong> £<%= @product.price.round(2) %></h4>
+            <div class="seller-avatar d-flex justify-content-left">
+              <%= cl_image_tag @product.user.photo.key, class: "avatar" %>
+              <h4 class="user-info align-text-center"><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
+            </div>
+            <div class="basket-b d-flex justify-content-bottom">
+              <%= button_to "Add to basket", product_transactions_path(@product), method: :post, class:"button" %>
+            </div>
         </div>
       </div>
-    </div>
+
   </div>
-
-
-
+</div>
   <%# <%= link_to "Continue shopping", products_path, class: "text-decoration-none"%>
   <%# <%= link_to "Go to basket", basket_path, class: "text-decoration-none" %>
   <%# <div class=<%= @product.user == current_user ? "" : "d-none" %>
     <%# <%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
   <%# </div> %>
-</div>
