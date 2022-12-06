@@ -38,7 +38,7 @@
 .basket-b{
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .card-product1{
@@ -49,7 +49,7 @@
   // display: flex;
   // // align-items: center;
   // justify-content: space-between;
-  width: 80%;
+  width: 90%;
   margin-left: 10px;
   padding-top: 25px;
   border-radius: 8px;
@@ -69,4 +69,8 @@
 .user-info{
   display: flex;
   justify-content: bottom;
+}
+
+.card-container {
+  width: 50%;
 }

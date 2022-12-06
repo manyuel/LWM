@@ -10,3 +10,16 @@
 @import "footer";
 @import "carousel";
 @import "container";
+
+.indexcard{
+  img{
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+}
+
+.yo{
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  padding-left: 10px;
+}
