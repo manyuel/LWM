@@ -31,27 +31,7 @@
       </div>
     <%end%>
     </div>
-  <%# <div class="listed">
-    <h2>Listed Products</h2>
-  <div class="d-flex justify-content-start mt-3">
-    <div class="basket">
-      <% @listed_products.each do |product| %>
-        <%# <div class="card-product2 d-flex" >
-          <%= cl_image_tag product.photos.first.key, width: 400, height: 350, crop: :fill %>
-          <%# <div class="flex-column">
-              <ul style="list-style:none" class="ul">
-              <%# <li><%=link_to product.item %>
-              <%# £<%= product.price.round(2) %>
-              <%# </ul>
-          </div>
-            <div class="exit">
-              <%= link_to 'X', product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary mr-0" %>
-            <%# </div>
-        </div>
-      <%end%>
-    <%# </div>
-  <% end %>
-</div>
+ </div>
 
 <% if @sold_products.empty? %>
   <div class="listed d-flex justify-content-center border-bottom border-2">
@@ -86,20 +66,6 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <%#
     <div>
       <p><%="You're yet to sell any items!"%>
@@ -125,3 +91,19 @@
     </div>
   </div>
 </div> %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

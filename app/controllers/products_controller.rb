@@ -10,6 +10,12 @@ class ProductsController < ApplicationController
     else
       @pagy, @products = pagy(Product.where.not(user_id: @user.id).where(is_sold: false))
     end
+
+    if params[:buy].present?
+      @products = Product.where("item ILIKE ?", "%#{params[:buy]}%")
+    else
+      @products = Product.all
+    end
   end
 
   def new
@@ -43,10 +49,6 @@ class ProductsController < ApplicationController
     unfinished_transactions = Transaction.where(user: current_user).where('is_delivered = ?', false)
     unfinished_transactions_ids = unfinished_transactions.map { |transaction| transaction.product.id }
     @purchased_products = Product.where(id: unfinished_transactions_ids)
-  end
-
-  def paginate
-    @pagy, @products = pagy(Product.all)
   end
 
   private

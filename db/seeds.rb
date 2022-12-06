@@ -51,7 +51,7 @@ user_hash = {
   'Safiyah Zaman' => 'https://avatars.githubusercontent.com/u/115396666?v=4'
 }
 
-products = ['Elephant Bike', 'Mug', 'Frying Pan', 'Record Player', 'Laptop Stand', 'Mug Tree', 'Cocktail Shaker', 'Door Hook', 'Plushie', 'Laptop Sleeve', 'Table', 'Shaker', 'Speaker', 'Lamp', 'Massage Gun', 'Punching Bag', 'Arm Weights', 'Bean Bag', 'Rug', 'Jellyfish Lamp', 'Hopper','Yoga Mat']
+products = ['Elephant Bike', 'Mug', 'Frying Pan', 'Record Player', 'Laptop Stand', 'Mug Tree', 'Cocktail Shaker', 'Door Hook', 'Plushie', 'Laptop Sleeve', 'Table', 'Shaker', 'Speaker', 'Lamp', 'Massage Gun', 'Punching Bag', 'Arm Weights', 'Bean Bag', 'Rug', 'Jellyfish Lamp', 'Hopper','Yoga Mat', 'Mens Top', 'Top', 'Trainer']
 conditions = ['excellent', 'good', 'okay', 'bad']
 
 user_hash.keys.each do |u|
