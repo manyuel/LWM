@@ -1,5 +1,4 @@
 class TransactionsController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_product, only: :create
   before_action :set_transaction, only: :destroy
 

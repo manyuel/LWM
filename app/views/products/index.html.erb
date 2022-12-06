@@ -6,8 +6,10 @@
   <%= link_to "Add a new product", new_product_path, class: "button"  %>
 </div>
 
+
 <div class="container d-flex justify-content-between">
-  <div class="row">
+  <div class="row d-flex justify-content-between">
+
     <% @products.each do |product| %>
       <%= render product, product: product%>
     <%end%>

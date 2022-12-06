@@ -8,6 +8,7 @@
 #testing
 require 'open-uri'
 
+Order.destroy_all
 Transaction.destroy_all
 Product.destroy_all
 User.destroy_all
@@ -51,7 +52,34 @@ user_hash = {
   'Safiyah Zaman' => 'https://avatars.githubusercontent.com/u/115396666?v=4'
 }
 
-products = ['Elephant Bike', 'Mug', 'Frying Pan', 'Record Player', 'Laptop Stand', 'Mug Tree', 'Cocktail Shaker', 'Door Hook', 'Plushie', 'Laptop Sleeve', 'Table', 'Shaker', 'Speaker', 'Lamp', 'Massage Gun', 'Punching Bag', 'Arm Weights', 'Bean Bag', 'Rug', 'Jellyfish Lamp', 'Hopper','Yoga Mat']
+products = {
+  'Elephant Bike' => 'Sports & Leisure',
+  'Mug' => 'Kitchenware',
+  'Frying Pan' => 'Kitchenware',
+  'Record Player' => 'Living Room & Garden',
+  'Laptop Stand' => 'Electronics',
+  'Mug Tree' => 'Kitchenware',
+  'Cocktail Shaker' => 'Kitchenware',
+  'Door Hook' => 'Bedroom',
+  'Plushie' => 'Bedroom',
+  'Laptop Sleeve' => 'Electronics',
+  'Table' => 'Living Room & Garden',
+  'Shaker' => 'Kitchenware',
+  'Speaker' => 'Electronics',
+  'Lamp' => 'Bedroom',
+  'Massage Gun' => 'Sports & Leisure',
+  'Punching Bag' => 'Sports & Leisure',
+  'Arm Weights' => 'Sports & Leisure',
+  'Bean Bag' => 'Living Room & Garden',
+  'Rug' => 'Living Room & Garden',
+  'Jellyfish Lamp' => 'Living Room & Garden',
+  'Hopper' => 'Sports & Leisure',
+  'Yoga Mat' => 'Sports & Leisure',
+  'Mens Top' => 'Clothing',
+  'Top' => 'Clothing',
+  'Trainer' => 'Clothing'
+}
+
 conditions = ['excellent', 'good', 'okay', 'bad']
 
 user_hash.keys.each do |u|
@@ -62,7 +90,8 @@ user_hash.keys.each do |u|
   city: "London",
   batch: 1051,
   password: '123456',
-  rating: rand(1..5)
+  rating: rand(1..5),
+  slack_id: "U045RC69WLT"
 )
   user_file = URI.open(user_hash[user.name])
   user.photo.attach(io: user_file, filename: "#{user.name}.jpg", content_type: 'image/jpg')
@@ -71,15 +100,18 @@ end
 
 puts "Creating Product..."
 
+product_keys = products.keys
+
 20.times do
   user = User.all.sample
-  item = products.shuffle!.pop
+  item = product_keys.shuffle!.pop
 
   product = Product.new(
     item: item,
     price: rand(1.99..49.99),
     description: "#{item} in #{conditions.sample} condition. No longer needed as I'm moving back home",
-    user_id: user.id
+    user_id: user.id,
+    category: products[item]
   )
 
   product_file1 = open("app/assets/images/#{item}1.jpg")
