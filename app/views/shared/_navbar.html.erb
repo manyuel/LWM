@@ -31,7 +31,6 @@
   </div>
 
     <% if user_signed_in? %>
-
       <%= link_to "All Products", products_path, class: "nav-link #{"active" if current_page?('/products')}" %>
       <%= link_to "My Products", my_products_path, class: "nav-link #{"active" if current_page?('/myproducts')}" %>
       <%= link_to "Purchases", purchased_products_path, class: "nav-link #{"active" if current_page?('/purchasedproducts')}" %>
@@ -40,7 +39,7 @@
         <%= cl_image_tag current_user.photo.key, class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </button>
       <% else %>
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link #{"active" if current_page?('/users/sign_in')}"%>
     <% end %>
 
 </div>
