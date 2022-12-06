@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(user_id: current_user.id, product_id: @product.id)
     if @transaction.save!
-      redirect_to basket_path
+
     else
       render 'products/show', status: :unprocessable_entity
     end
