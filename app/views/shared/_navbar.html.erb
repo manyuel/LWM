@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" data-controller="hello">
   <div class="container-fluid">
     <div style="width=30%">
       <%= link_to "/", class: "navbar-brand" do %>
@@ -6,7 +6,7 @@
       <% end %>
     </div>
 
-    <div class=<%= (current_page?(root_path) || current_page?(aboutpage_path)) ? "d-none" : "wrap" %>>
+    <div class=<%= current_page?(root_path) ? "d-none" : "wrap" %>>
       <div class="search" style="width=30%">
           <%= form_with url: products_path, method: :get, class: "d-flex flex-column justify-content-center" do %>
             <div class="d-flex" style="height: 35px !important;">
@@ -29,26 +29,32 @@
 
 
   </div>
+
     <% if user_signed_in? %>
-      <%= link_to "All Products",products_path, class: "nav-link text-white mx-2" %>
-      <%= link_to "My Products",my_products_path, class: "nav-link text-white mx-2" %>
-      <%= link_to "Purchases",purchased_products_path, class: "nav-link text-white mx-2" %>
-      <%= link_to "Basket", basket_path, class: "nav-link text-white mx-2" %>
-      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-        <%= cl_image_tag current_user.photo.key, class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      </button>
+      <%= link_to "All Products", products_path, class: "nav-link #{"active" if current_page?('/products')}" %>
+      <%= link_to "My Products", my_products_path, class: "nav-link #{"active" if current_page?('/myproducts')}" %>
+      <%= link_to "Purchases", purchased_products_path, class: "nav-link #{"active" if current_page?('/purchasedproducts')}" %>
+      <%= link_to "Basket", basket_path, class: "nav-link #{"active" if current_page?('/basket')}" %>
+       <ul style="list-style:none;">
+        <li class="nav-item dropdown">
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+          </li>
+        </ul>
       <% else %>
-      <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link #{"active" if current_page?('/users/sign_in')}"%>
     <% end %>
 </div>
-
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+<%#
+    <div class="offcanvas offcanvas-end offcanvas-size-sm" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
       <div class="offcanvas-header">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <div>
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-        </div>
+        <%# </div>
       </div>
-    </div>
+    </div> %>

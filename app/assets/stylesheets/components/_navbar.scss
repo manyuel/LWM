@@ -1,7 +1,10 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  // justify-content: space-between;
   background:#243038;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
+  white-space: nowrap;
+  align-items: center;
+  height: 55px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,5 +14,40 @@
 .navbar-lewagon .navbar-brand img {
   width: 50px;
   height: 50px;
+}
 
+.avatar-bordered{
+  margin-bottom: 15px;
+}
+
+.nav-link {
+  padding: .35rem .5rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 3px;
+  opacity: 0.5;
+  display: flex;
+  font-weight: 400;
+  font-family: "San Francisco (Numbers)", "Kievit", "Helvetica", "sans-serif";
+  text-decoration: none;
+  background-color: transparent;
+  line-height: 1.5;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #000;
+  opacity: 1;
+}
+
+.active  {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link:focus {
+  text-decoration: none;
+  color: white;
 }

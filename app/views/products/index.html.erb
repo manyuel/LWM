@@ -1,5 +1,9 @@
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mt-3">
   <h1> All Products available for sale <h1>
+</div>
+
+<div class="d-flex justify-content-center mb-4">
+  <%= link_to "Add a new product", new_product_path, class: "button"  %>
 </div>
 
 <div class="container d-flex justify-content-between">
@@ -10,6 +14,22 @@
   </div>
 </div>
 
-<div class="d-flex justify-content-center">
-  <%= link_to "Add a new product", new_product_path, class: "button"  %>
+<div class="d-flex justify-content-center px-3">
+  <% link = pagy_link_proc(@pagy, link_extra: 'class="page-link"') -%>
+  <%#                            -%><nav aria-label="pager"  class="pagy-bootstrap-nav" role="navigation">
+  <%#                            -%>  <ul class="pagination">
+  <% if @pagy.prev                -%>    <li class="page-item prev"><%== link.call(@pagy.prev, pagy_t('pagy.nav.prev'), 'aria-label="previous"') %></li>
+  <% else                        -%>    <li class="page-item prev disabled"><a href="#" class="page-link"><%== pagy_t('pagy.nav.prev') %></a></li>
+  <% end                         -%>
+  <% @pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] -%>
+  <%   if    item.is_a?(Integer) -%>    <li class="page-item"><%== link.call(item) %></li>
+  <%   elsif item.is_a?(String)  -%>    <li class="page-item active"><%== link.call(item) %></li>
+  <%   elsif item == :gap        -%>    <li class="page-item disabled gap"><a href="#" class="page-link"><%== pagy_t('pagy.nav.gap') %></a></li>
+  <%   end                       -%>
+  <% end                         -%>
+  <% if @pagy.next                -%>    <li class="page-item next"><%== link.call(@pagy.next, pagy_t('pagy.nav.next'), 'aria-label="next"') %></li>
+  <% else                        -%>    <li class="page-item next disabled"><a href="#" class="page-link"><%== pagy_t('pagy.nav.next') %></a></li>
+  <% end                         -%>
+  <%#                            -%>  </ul>
+  <%#                            -%></nav>
 </div>

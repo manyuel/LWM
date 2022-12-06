@@ -1,4 +1,4 @@
-<div class="basket-container">
+<div class="basket-container mt-3">
   <div class="d-flex justify-content-center">
     <h1>Basket</h1>
   </div>
@@ -11,7 +11,7 @@
             <ul style="list-style:none; width: 100%;" class="d-flex justify-content-between mt-1">
               <div style="width: 75%" class="d-flex flex-column align-items-start justify-content-between mt-1 ms-3">
                 <li class="item-name"><%= transaction.product.item %></li>
-                <li> £<%= "%.2f" % transaction.product.price %></li>
+                <li> £<%= '%.2f' % transaction.product.price %></li>
               </div>
               <div style="width: 25%">
                 <div class="d-flex justify-content-end pe-3">

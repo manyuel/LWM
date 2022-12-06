@@ -1,31 +1,7 @@
-<div class="col-sm-12 col-lg-4">
+<div class="indexcard col-sm-12 col-lg-4">
   <%= link_to product, class: 'text-decoration-none text-dark' do %>
-    <div id="productCarousel<%= product.id %>" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#productCarousel<%= product.id %>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#productCarousel<%= product.id %>" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#productCarousel<%= product.id %>" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= cl_image_tag product.photos.first.key, class:"d-block", width: 417, height: 250, crop: :fill %>
-        </div>
-        <div class="carousel-item">
-          <%= cl_image_tag product.photos.second.key, class:"d-block", width: 417, height: 250, crop: :fill %>
-        </div>
-        <div class="carousel-item">
-          <%= cl_image_tag product.photos.third.key, class:"d-block", width: 417, height: 250, crop: :fill %>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel<%= product.id %>" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#productCarousel<%= product.id %>" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+    <%= cl_image_tag product.photos.first.key, width: 350, height: 250, crop: :fill %>
+
     <div class="bg-white mb-4">
       <div class="w-full d-flex justify-content-around">
         <h1 class="font-semibold flex-fill"><%= product.item %></h1>
@@ -33,9 +9,9 @@
         <div class="flex items-center gap-2"></div>
       </div>
       <p class="text-gray-500 text-sm"><%= product.description %></p>
-      <div class="d-flex justify-content-left align-items-center">
-        <%= cl_image_tag product.user.photo.key, class: "avatar" %>
-        <p class="text-gray-500 text-sm"><%= product.user.name %></p>
+      <div class="d-inline-flex justify-content-left align-items-center">
+        <%= cl_image_tag product.user.photo.key, class: "avatar mx-3" %>
+        <p class="text-gray-500 text-sm mt-3"><%= product.user.name %></p>
       </div>
     </div>
   <% end %>

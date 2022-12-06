@@ -1,10 +1,17 @@
-<h1>My Products</h1>
-
-
-<h2>Purchased Products</h2>
-
-<% @purchased_products.each do |product| %>
-  <%= link_to product.item, product_path(product) %>
-<% end %>
-
-<p>Adequate CSS so that link disappears if it's empty? Or just "No purchases yet" meessage?</p>
+<div class="container3 mt-3">
+  <% if @purchased_products.empty? %>
+    <div class="empty">
+      <h2><%="You're yet to make any purchases!"%></h2>
+    </div>
+  <% else %>
+    <h1>My Products</h1>
+    <div class="listed">
+      <h2>Purchased Products</h2>
+    </div>
+    <div class="row">
+      <% @purchased_products.each do |product| %>
+        <%= render "purchased", product: product %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
