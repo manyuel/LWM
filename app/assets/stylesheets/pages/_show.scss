@@ -49,12 +49,13 @@
   // display: flex;
   // // align-items: center;
   // justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10 px;
-  width: 80%;
+
+width: 90%;
   margin-left: 10px;
+  padding-top: 25px;
   border-radius: 8px;
   height: 350px;
+  padding-left: 15px;
   h4{
     font-size:17px;
     padding-left: 10px;
@@ -69,4 +70,8 @@
 .user-info{
   display: flex;
   justify-content: bottom;
+}
+
+.card-container {
+  width: 50%;
 }
