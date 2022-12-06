@@ -4,7 +4,7 @@
 }
 
 .container3{
-margin: 25px;
+  margin: 25px;
 
 
 }
@@ -24,15 +24,13 @@ margin: 25px;
   }
 }
 
-.card-product2{ overflow: hidden;
+.card-product2{
   // height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: flex-start;
   // align-items: center;
   justify-content: space-between;
-
   width: 35%;
   margin: 10px;
   border-radius: 8px;
@@ -42,7 +40,6 @@ margin: 25px;
   height: 100%;
   width: 120px;
   object-fit: cover;
-
 }
 
 .ul{
