@@ -2,13 +2,13 @@
 <div class="min-height mt-3">
   <%= link_to "Back", products_path, class: "back-button text-decoration-none" %>
 
-<div class="show">
-  <h1>Listing Details</h1>
-</div>
+  <div class="show">
+    <h1>Listing Details</h1>
+  </div>
 
-<div class="container">
-  <div class="row">
-      <div class="col-6">
+  <div class="container d-flex justify-content-around" style="width: 70%;">
+    <div class="card-container">
+      <div style="width: 100%;">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -17,13 +17,13 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag @product.photos.first.key, class:"d-block", width: 600, height: 350, crop: :fill %>
+              <%= cl_image_tag @product.photos.first.key, class:"d-block", width: 700, height: 350, crop: :fill, gravity: :auto %>
             </div>
             <div class="carousel-item">
-              <%= cl_image_tag @product.photos.second.key, class:"d-block", width: 600, height: 350, crop: :fill %>
+              <%= cl_image_tag @product.photos.second.key, class:"d-block", width: 700, height: 350, crop: :fill, gravity: :auto %>
             </div>
             <div class="carousel-item">
-              <%= cl_image_tag @product.photos.third.key, class:"d-block", width: 600, height: 350, crop: :fill %>
+              <%= cl_image_tag @product.photos.third.key, class:"d-block", width: 700, height: 350, crop: :fill, gravity: :auto %>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -36,8 +36,9 @@
           </button>
         </div>
       </div>
-    <div class="product-details d-flex col-6">
-      <div class="card-product1 py-3">
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="card-product1">
         <h3 class="product-name"><strong><%= @product.item  %></strong></h3>
         <h4 class="product-name"><%= @product.description %></h4>
         <h4><strong>Buy now for:</strong> £<%= @product.price.round(2) %></h4>
@@ -47,12 +48,13 @@
             <h4><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
           <% end %>
         </div>
-        <div class="basket-b d-flex justify-content-bottom" data-controller="confirm">
-          <%= button_to "Add to basket", product_transactions_path(@product), id: :confirm, method: :post, class:"button mt-0" %>
+        <div class="basket-b d-flex justify-content-bottom">
+          <%= button_to "Add to basket", product_transactions_path(@product), method: :post, class:"button" %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -75,10 +77,6 @@
   </div>
 </div>
 
-  </div>
 </div>
-  <%# <%= link_to "Continue shopping", products_path, class: "text-decoration-none"%>
-  <%# <%= link_to "Go to basket", basket_path, class: "text-decoration-none" %>
-  <%# <div class=<%= @product.user == current_user ? "" : "d-none" %>
-    <%# <%= link_to 'Remove listing', product_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}%>
-  <%# </div> %>
+
+
