@@ -1,17 +1,17 @@
-<div class="basket-container">
+<div class="basket-container mt-3">
   <div class="d-flex justify-content-center">
     <h1>Basket</h1>
   </div>
 
   <div class="d-flex justify-content-center mt-3">
-    <div class="basket" style="width: 60%;">
+    <div class="basket <%= "d-none" if @transactions.empty? %>" style="width: 60%;">
       <% @transactions.each do |transaction| %>
         <div class="card-product d-flex mt-3" style="width: 90%;">
           <%= cl_image_tag transaction.product.photos.first.key, width: 400, height: 350, crop: :fill %>
             <ul style="list-style:none; width: 100%;" class="d-flex justify-content-between mt-1">
               <div style="width: 75%" class="d-flex flex-column align-items-start justify-content-between mt-1 ms-3">
                 <li class="item-name"><%= transaction.product.item %></li>
-                <li> £<%= transaction.product.price.round(2) %></li>
+                <li> £<%= '%.2f' % transaction.product.price %></li>
               </div>
               <div style="width: 25%">
                 <div class="d-flex justify-content-end pe-3">
@@ -29,13 +29,14 @@
       </div>
       <div class="d-flex justify-content-around mt-3">
         <p>Total(<%= @transactions.count == 1 ? "#{@transactions.count} item" : "#{@transactions.count} items" %>)</p>
-        £<%= @transactions.map { |transaction| transaction.product.price.round(2) }.sum.round(2) %>
+        £<%= "%.2f" % @transactions.map { |transaction| transaction.product.price.round(2) }.sum %>
       </div>
 
       <button class="buynow-button text-light my-3" id="pay">Checkout</button>
     </div>
   </div>
 </div>
+
 
 
 <script src="https://js.stripe.com/v3/"></script>

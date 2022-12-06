@@ -51,10 +51,6 @@ class ProductsController < ApplicationController
     @purchased_products = Product.where(id: unfinished_transactions_ids)
   end
 
-  def paginate
-    @pagy, @products = pagy(Product.all)
-  end
-
   private
 
   def product_params
