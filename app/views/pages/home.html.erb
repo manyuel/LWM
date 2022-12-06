@@ -3,13 +3,22 @@
     <h1>Le Wagon Marketplace</h1>
     <p>The place for Wagoners to buy and sell items they no longer need to fellow alumni and incoming students</p>
     <div class="d-flex justify-content-center">
-      <input type="text" class="searchTerm" placeholder="Search here for a specific item...">
-        <button type="submit" class="searchButton">
-          <i class="fa fa-search"></i>
-        </button>
+      <%= form_with url: products_path, method: :get, class: "d-flex flex-column justify-content-center" do %>
+            <div class="d-flex" style="height: 35px !important;">
+              <%= text_field_tag :buy,
+                params[:buy],
+                class: "searchTerm",
+                placeholder: "Search for an item"
+              %>
+              <%= submit_tag "Search", class: "searchButton" %>
+                <i class="fa fa-search"></i>
+            </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+
 
 <div class="my-5">
   <div class="d-flex flex-column align-items-center ">

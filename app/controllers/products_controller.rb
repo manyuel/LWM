@@ -10,6 +10,12 @@ class ProductsController < ApplicationController
     else
       @pagy, @products = pagy(Product.where.not(user_id: @user.id).where(is_sold: false))
     end
+
+    if params[:buy].present?
+      @products = Product.where("item ILIKE ?", "%#{params[:buy]}%")
+    else
+      @products = Product.all
+    end
   end
 
   def new

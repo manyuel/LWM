@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div style="width=30%">
       <%= link_to "/", class: "navbar-brand" do %>
-        <%= cl_image_tag "logo_ziaadl.jpg", class: "logo" %>
+      <%= cl_image_tag "logolw_e0fijt", class: "logo" %>
       <% end %>
     </div>
 
@@ -10,8 +10,8 @@
       <div class="search" style="width=30%">
           <%= form_with url: products_path, method: :get, class: "d-flex flex-column justify-content-center" do %>
             <div class="d-flex" style="height: 35px !important;">
-              <%= text_field_tag :location,
-                params[:location],
+              <%= text_field_tag :buy,
+                params[:buy],
                 class: "searchTerm",
                 placeholder: "Search for an item"
               %>
@@ -31,7 +31,6 @@
   </div>
 
     <% if user_signed_in? %>
-
       <%= link_to "All Products", products_path, class: "nav-link #{"active" if current_page?('/products')}" %>
       <%= link_to "My Products", my_products_path, class: "nav-link #{"active" if current_page?('/myproducts')}" %>
       <%= link_to "Purchases", purchased_products_path, class: "nav-link #{"active" if current_page?('/purchasedproducts')}" %>
