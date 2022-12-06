@@ -9,10 +9,6 @@
   </div>
   <div class="listed">
     <h2>Listed Products</h2>
-</div>
-<div class="btn">
-    <%= link_to "Add a new product", new_product_path, class:"button" %>
-</div>
   <div class="d-flex justify-content-start mt-3">
     <div class="basket">
       <% @listed_products.each do |product| %>
@@ -23,16 +19,10 @@
                 <li><%= product.item %></li>
                 £<%= product.price.round(2) %>
                 </ul>
-                <%# <div style="width: 25%" class="d-flex flex-column justify-content-between text-bold"> %>
-                  <%# <div class="d-flex justify-content-end pe-3"> %>
             </div>
             <div class="exit">
               <%= link_to 'X', products_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary mr-0" %>
             </div>
-            <%# </div> %>
-                <%# </div> %>
-
-            <%# </div> %>
         </div>
       <%end%>
     </div>

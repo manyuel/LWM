@@ -84,3 +84,5 @@ gem "cloudinary"
 gem "faker"
 
 gem "stripe", "~> 8.0"
+
+gem "pagy", "~> 5.10"
