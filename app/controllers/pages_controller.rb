@@ -8,12 +8,4 @@ class PagesController < ApplicationController
       @products = Product.all
     end
   end
-
-
-  def user_dash
-  end
-
-  def about_us
-  end
-
 end
