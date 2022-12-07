@@ -77,7 +77,14 @@ products = {
   'Yoga Mat' => 'Sports & Leisure',
   'Mens Top' => 'Clothing',
   'Top' => 'Clothing',
-  'Trainer' => 'Clothing'
+  'Trainer' => 'Clothing',
+  'Bedside Table' => 'Bedroom',
+  'Microphone' => 'Electronics',
+  'Ramen' => 'Kitchenware',
+  'Joggers' => 'Clothing',
+  'Birds of Paradise' => 'Living Room & Garden',
+  'zz plant' => 'Living Room & Garden',
+  'Swiss Cheese Plant' => 'Living Room & Garden'
 }
 
 conditions = ['excellent', 'good', 'okay', 'bad']
@@ -103,7 +110,7 @@ puts "Creating Product..."
 product_keys = products.keys
 
 20.times do
-  user = User.all.sample
+  user = User.all.sample.
   item = product_keys.shuffle!.pop
 
   product = Product.new(
