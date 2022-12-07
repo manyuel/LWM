@@ -83,7 +83,7 @@ products = {
   'Ramen' => 'Kitchenware',
   'Joggers' => 'Clothing',
   'Birds of Paradise' => 'Living Room & Garden',
-  'zz plant' => 'Living Room & Garden',
+  'Zamioculca plant' => 'Living Room & Garden',
   'Swiss Cheese Plant' => 'Living Room & Garden'
 }
 
@@ -110,13 +110,23 @@ puts "Creating Product..."
 product_keys = products.keys
 
 20.times do
-  user = User.all.sample.
+  user = User.all.shuffle!.pop
   item = product_keys.shuffle!.pop
+  phrase = ['I am moving back home',
+            'I am getting a new flat with my partner',
+            'I will be moving abroad for a new job',
+            'I am starting a nomad life and will not have a permanent home',
+            'I have now embraced a zen, minimalist lifestyle',
+            'I am making a statement against rotten capitalism',
+            'I plan on selling this one and acquiring a cheaper version',
+            'it reminds me of my aunt and I never really liked her',
+            'I broke up with my partner and it was their gift',
+            'my new dog will very likely chew it']
 
   product = Product.new(
     item: item,
     price: rand(1.99..49.99),
-    description: "#{item} in #{conditions.sample} condition. No longer needed as I'm moving back home.",
+    description: "#{item} in #{conditions.sample} condition. It is a nice and sturdy #{item}. While I have some lovely memories with it, I no longer need it as #{phrase}.",
     user_id: user.id,
     category: products[item]
   )

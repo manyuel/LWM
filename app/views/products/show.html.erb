@@ -1,12 +1,11 @@
 
 <div class="min-height mt-3">
-  <%= link_to "Back", products_path, class: "back-button text-decoration-none" %>
 
   <div class="show">
-    <h1>Listing Details</h1>
+    <h1><%= @product.item %></h1>
   </div>
 
-  <div class="container d-flex justify-content-around" style="width: 70%;">
+  <div class="container d-flex justify-content-around" style="width: 100%;">
     <div class="card-container">
       <div style="width: 100%;">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
@@ -37,24 +36,24 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container d-flex justify-content-around" style="width: 100%">
     <div class="d-flex justify-content-center">
       <div class="card-product1">
-        <h3 class="product-name"><strong><%= @product.item  %></strong></h3>
         <h4 class="product-name"><%= @product.description %></h4>
-        <h4><strong>Buy now for:</strong> £<%= @product.price.round(2) %></h4>
-        <div class="seller-avatar d-flex justify-content-left">
+        <h4>£<%= '%.2f' % @product.price %></h4>
+        <div class="seller-avatar d-flex justify-content-left mt-2">
           <%= cl_image_tag @product.user.photo.key, class: "avatar" %>
-          <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none" do %>
+          <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none mt-4" do %>
             <h4><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
           <% end %>
         </div>
-        <div class="basket-b d-flex justify-content-bottom" data-controller="confirm">
+        <div class="basket-b d-flex justify-content-bottom btn-lg mt-1" data-controller="confirm">
           <%= button_to "Add to basket", product_transactions_path(@product), id: :confirm, method: :post, class:"button" %>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
