@@ -44,13 +44,13 @@ class ProductsController < ApplicationController
   def purchased_products
     unfinished_transactions = Transaction.where(user: current_user).where('is_delivered = ?', false)
     unfinished_transactions_ids = unfinished_transactions.map { |transaction| transaction.product.id }
-    @purchased_products = Product.where(id: unfinished_transactions_ids)
+    @purchased_products = Product.where(id: unfinished_transactions_ids, is_sold: true)
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:item, :description, :price, photos: [])
+    params.require(:product).permit(:item, :description, :price, :category, photos: [])
   end
 
   def set_product
