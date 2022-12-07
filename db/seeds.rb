@@ -121,8 +121,8 @@ puts "Creating Product..."
 users = User.all
 product_keys = products.keys
 
-20.times do
-  user = users.shuffle!.pop
+31.times do
+  user = users.shuffle.pop
   item = product_keys.shuffle!.pop
 
   product = Product.new(
