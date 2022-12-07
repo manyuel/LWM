@@ -31,8 +31,7 @@
 
     <% if user_signed_in? %>
       <%= link_to "All Products", products_path, class: "nav-link #{"active" if current_page?('/products')}" %>
-      <%= link_to "My Products", my_products_path, class: "nav-link #{"active" if current_page?('/myproducts')}" %>
-      <%= link_to "Purchases", purchased_products_path, class: "nav-link #{"active" if current_page?('/purchasedproducts')}" %>
+      <%= link_to "Dashboard", mydashboard_path, class: "nav-link #{"active" if current_page?('/myproducts')}" %>
       <%= link_to "Basket", basket_path, class: "nav-link #{"active" if current_page?('/basket')}" %>
        <ul style="list-style:none;">
         <li class="nav-item dropdown">

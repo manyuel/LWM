@@ -47,6 +47,14 @@ class ProductsController < ApplicationController
     @purchased_products = Product.where(id: unfinished_transactions_ids, is_sold: true)
   end
 
+  def user_dashboard
+    @listed_products = Product.where(user: current_user, is_sold: false)
+    @sold_products = Product.where(user: current_user, is_sold: true)
+    unfinished_transactions = Transaction.where(user: current_user).where('is_delivered = ?', false)
+    unfinished_transactions_ids = unfinished_transactions.map { |transaction| transaction.product.id }
+    @purchased_products = Product.where(id: unfinished_transactions_ids, is_sold: true)
+  end
+
   private
 
   def product_params
