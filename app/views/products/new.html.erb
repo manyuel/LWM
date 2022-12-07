@@ -10,7 +10,8 @@
     <%= f.input :category, collection: Product::CATEGORY %>
     <%= f.input :price, label: 'Set your price', placeholder: "£" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Image Upload (minimum of 3)" %>
-
-    <%= f.button :submit, 'List Product', class: "list-button d-flex justify-content-center" %>
+    <div class="d-flex justify-content-center">
+      <%= f.button :submit, 'List Product', class: "list-button d-flex justify-content-center" %>
+    </div>
   <% end %>
 </div>
