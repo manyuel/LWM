@@ -52,6 +52,10 @@
   color: white;
 }
 
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 #red {
   color: red($color: #991a1a)
 }
