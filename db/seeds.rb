@@ -77,7 +77,14 @@ products = {
   'Yoga Mat' => 'Sports & Leisure',
   'Mens Top' => 'Clothing',
   'Top' => 'Clothing',
-  'Trainer' => 'Clothing'
+  'Trainer' => 'Clothing',
+  'Bedside Table' => 'Bedroom',
+  'Microphone' => 'Electronics',
+  'Ramen' => 'Kitchenware',
+  'Joggers' => 'Clothing',
+  'Birds of Paradise' => 'Living Room & Garden',
+  'Zamioculca plant' => 'Living Room & Garden',
+  'Swiss Cheese Plant' => 'Living Room & Garden'
 }
 
 conditions = ['excellent', 'good', 'okay', 'bad']
