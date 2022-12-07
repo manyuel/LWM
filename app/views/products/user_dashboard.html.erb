@@ -1,6 +1,6 @@
-<div class="container3 min-height">
+<%# <div class="container3 min-height">
   <h1 class= "d-flex justify-content-center border-bottom border-2">Dashboard</h1>
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <ul class="nav mb-3" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active" id="pills-my-listings-tab" data-bs-toggle="pill" data-bs-target="#pills-my-listings" type="button" role="tab" aria-controls="pills-my-listings" aria-selected="true">Listings</button>
       </li>
@@ -14,12 +14,38 @@
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-my-listings" role="tabpanel" aria-labelledby="pills-my-listings-tab" tabindex="0">
         <%= render "products/my_products", listed_products: @listed_products %>
-      </div>
+      <%# </div>
       <div class="tab-pane fade" id="pills-sold" role="tabpanel" aria-labelledby="pills-sold-tab" tabindex="0">
         <%= render "products/sold_products", sold_products: @sold_products %>
-      </div>
+      <%# </div>
       <div class="tab-pane fade" id="pills-orders" role="tabpanel" aria-labelledby="pills-orders-tab" tabindex="0">
         <%= render "products/purchased_products", purchased_products: @purchased_products, sold_products: @sold_products %>
-      </div>
+      <%# </div>
     </div>
+</div> %>
+
+
+<div class="container3 min-height">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Listings</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sold</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Orders</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <%= render "products/my_products", listed_products: @listed_products %>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <%= render "products/sold_products", sold_products: @sold_products %>
+    </div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <%= render "products/purchased_products", purchased_products: @purchased_products, sold_products: @sold_products %>
+    </div>
+  </div>
 </div>

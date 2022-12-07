@@ -1,0 +1,57 @@
+
+
+// #pills-tab{
+//   li.nav-link{
+//     color: #41464b;
+//   }
+// }
+
+// .pill-nav-link {
+//   padding: .35rem .5rem;
+//   color: #41464b;
+//   font-size: 1rem;
+//   border-radius: 3px;
+//   opacity: 0.5;
+//   display: flex;
+//   font-weight: 400;
+//   font-family: "San Francisco (Numbers)", "Kievit", "Helvetica", "sans-serif";
+//   text-decoration: none;
+//   background-color: transparent;
+//   line-height: 1.5;
+// }
+
+// .pill-nav-link:hover {
+//   text-decoration: none;
+//   color: white;
+//   background-color: $red;
+//   opacity: 1;
+// }
+
+// #pills-tab{
+//   li.active{
+//     background-color: #41464;
+//     border: #41464b;
+//   }
+// }
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: $red;
+}
+
+.nav-pills .nav-link {
+  background: 0 0;
+  border: 0;
+  border-radius: 0.25rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: black;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.tab-pane.fade.show.active {
+  opacity: 1;
+  text-decoration: none;
+  color: black;
+}
