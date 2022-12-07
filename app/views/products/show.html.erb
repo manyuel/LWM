@@ -37,19 +37,21 @@
       </div>
     </div>
   </div>
-  <div class="container d-flex justify-content-around" style="width: 100%">
+  <div class="container d-flex justify-content-around" style="width: 749px">
     <div class="d-flex justify-content-center">
-      <div class="card-product1">
+      <div class="card-product1 mb-4" style="height: 265px">
         <h4 class="product-name"><%= @product.description %></h4>
         <h4>£<%= '%.2f' % @product.price %></h4>
-        <div class="seller-avatar d-flex justify-content-left mt-2">
-          <%= cl_image_tag @product.user.photo.key, class: "avatar" %>
-          <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none mt-4" do %>
-            <h4><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
-          <% end %>
-        </div>
-        <div class="basket-b d-flex justify-content-bottom btn-lg mt-1" data-controller="confirm">
-          <%= button_to "Add to basket", product_transactions_path(@product), id: :confirm, method: :post, class:"button" %>
+        <div>
+          <div class="seller-avatar d-flex justify-content-left mt-2">
+            <%= cl_image_tag @product.user.photo.key, class: "rounded" %>
+            <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none mt-4" do %>
+              <h4><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
+            <% end %>
+            <div class="basket-b d-flex justify-content-center mt-5 mb-5" data-controller="confirm">
+            <%= button_to "Add to basket", product_transactions_path(@product), id: :confirm, method: :post, class:"button" %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
