@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   resources :transactions, only: :destroy
   get 'transactions/:id/confirmation', to: 'transactions#confirmation', as: 'confirmation'
   get 'dashboard', to: 'pages#user_dash', as: 'dashboard'
+  get 'mydashboard', to: 'pages#user_dashboard', as: 'mydashboard'
   get 'basket', to: 'transactions#basket', as: 'basket'
   get 'payment', to: 'transactions#confirmation', as: 'payment'
   get 'myproducts', to: 'products#my_products', as: 'my_products'
   get 'purchasedproducts', to: 'products#purchased_products', as: 'purchased_products'
+  get 'soldproducts', to: 'products#sold', as: 'sold_items'
 end
