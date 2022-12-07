@@ -7,9 +7,8 @@
         <h2 class="d-flex justify-content-center"><%="You're yet to make any purchases!"%></h2>
       </div>
     <% else %>
-      <h1 class="d-flex justify-content-center border-bottom border-3 mb-5 pb-4 mt-3">My Products</h1>
       <div class="listed" >
-        <h2 class="d-flex justify-content-center mb-3">Purchases</h2>
+        <h2 class="d-flex justify-content-center mb-3">Orders</h2>
       </div>
       <div class="row">
         <% @purchased_products.each do |product| %>
