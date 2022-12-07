@@ -30,5 +30,26 @@
     margin-top: 14px;
 
   }
+}
 
+.rounded {
+  width: 12%;
+  height: 12%;
+  border-radius: 50%!important;
+}
+
+.seller {
+  font-style: italic;
+}
+
+.noHover{
+  pointer-events: none;
+}
+
+.item-name:hover {
+  font-size: 30px;
+}
+
+.cost {
+  font-style: bold;
 }

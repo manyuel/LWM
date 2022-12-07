@@ -2,17 +2,18 @@
   <%= link_to product, class: 'text-decoration-none text-dark' do %>
     <%= cl_image_tag product.photos.first.key, width: 350, height: 250, crop: :fill %>
 
-    <div class="yo bg-white mb-4">
+    <div class="yo bg-white mb-4" style="height: 170px;">
       <div class="w-full d-flex justify-content-around">
-        <h2 class="font-normal flex-fill"><%= product.item %></h1>
-        <h5 class="price mt-3 font-light flex-fill">£<%= '%.2f' % product.price %></h5>
-        <div class="flex items-center gap-2"></div>
+        <h2 class="item-namefont-normal flex-fill"><%= product.item %></h1>
       </div>
-      <p class="text-gray-500 text-sm"><%= product.description %></p>
-      <div class="d-inline-flex justify-content-left align-items-center">
-        <%= cl_image_tag product.user.photo.key, class: "avatar mx-3" %>
-        <p class="text-gray-500 text-sm"><%= product.user.name %></p>
+      <div class="noHover d-flex justify-content-left">
+          <%= cl_image_tag product.user.photo.key, class: "rounded avatar mx-3" %>
+          <p class="seller text-gray-500 text-sm mt-4"><%= product.user.name %></p>
       </div>
+      <div class="cost fontw-bold d-flex justify-content-end">
+        <h5 class="fontw-bold">£<%= '%.2f' % product.price %></h5>
+      </div>
+        <%# <p class="text-gray-500 text-sm"><%= product.description.truncate(43, separator: ' ') %></p>
     </div>
   <% end %>
 </div>
