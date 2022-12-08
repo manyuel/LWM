@@ -1,17 +1,22 @@
-<h1 class="d-flex justify-content-center">List a new product</h1>
-<p class="new-text d-flex justify-content-center my-3">Simply fill out the form below to list a new item to sell</p>
+<div class="min-height">
 
 
-<div class="newform d-flex justify-content-center">
-  <%= simple_form_for @product do |f| %>
-    <%= f.input :item, label: 'Product name:' %>
+  <h1 class="d-flex justify-content-center mt-3">List a new product</h1>
+  <p class="new-text d-flex justify-content-center my-3">Simply fill out the form below to list a new item to sell</p>
 
-    <%= f.input :description, label: 'Brief description and condition of the product:' %>
-    <%= f.input :category, collection: Product::CATEGORY %>
-    <%= f.input :price, label: 'Set your price', placeholder: "£" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Image Upload (minimum of 3)" %>
-    <div class="d-flex justify-content-center">
-      <%= f.button :submit, 'List Product', class: "list-button d-flex justify-content-center" %>
-    </div>
-  <% end %>
+
+  <div class="newform d-flex justify-content-center">
+    <%= simple_form_for @product do |f| %>
+      <%= f.input :item, label: 'Product name:' %>
+
+      <%= f.input :description, label: 'Brief description and condition of the product:' %>
+      <%= f.input :category, collection: Product::CATEGORY %>
+      <%= f.input :price, label: 'Set your price', placeholder: "£" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Image Upload (minimum of 3)" %>
+      <div class="d-flex justify-content-center">
+        <%= f.button :submit, 'List Product', class: "list-button d-flex justify-content-center" %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
