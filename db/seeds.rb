@@ -84,7 +84,17 @@ products = {
   'Mens Top' => 'Clothing',
   'Top' => 'Clothing',
   'Trainer' => 'Clothing',
-  'Joggers' => 'Clothing'
+  'Joggers' => 'Clothing',
+  'Throw' => 'Bedroom',
+  'Neon Light' => 'Bedroom',
+  'White Board' => 'Other',
+  'Plant Pot' => 'Living Room & Garden',
+  'Mirror' => 'Bedroom',
+  'Vinyl Storage' => 'Living Room & Garden',
+  'Bath Mat' => 'Other',
+  'Football' => 'Sports & Leisure',
+  'Wall Hanging' => 'Bedroom',
+  'Projector' => 'Living Room & Garden'
 }
 
 conditions = ['excellent', 'good', 'okay', 'bad']
