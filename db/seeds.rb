@@ -131,7 +131,7 @@ puts "Creating Product..."
 users = User.all
 product_keys = products.keys
 
-31.times do
+41.times do
   user = users.shuffle.pop
   item = product_keys.shuffle!.pop
   description_prez = "Plants are predominantly photosynthetic eukaryotes of the kingdom Plantae. Historically, the plant kingdom encompassed all living things that were not animals, and included algae and fungi; however, all current definitions of Plantae exclude the fungi and some algae, as well as the prokaryotes (the archaea and bacteria). Will look terrific in your bedroom or living room."
