@@ -7,7 +7,7 @@
     </div>
   <% else %>
     <div class="d-flex justify-content-center mt-3">
-      <div class="basket d-flex justify-content-center flex-wrap">
+      <div class="basket d-flex flex-wrap <%= listed_products.count > 3 ? "justify-content-start" : "justify-content-center" %>">
         <% listed_products.each do |product| %>
           <%= link_to product_path(product), class: "text-decoration-none text-dark" do %>
             <div class="card-product mt-3 mx-0">

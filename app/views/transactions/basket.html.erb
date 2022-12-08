@@ -25,10 +25,10 @@
 
     <div class="total pt-3 mt-3 d-flex flex-column justify-content-around sticky-top" style="width: 40%;" >
       <div class="d-flex justify-content-center">
-        <p class="border-bottom item-name" style="width: 80%;">Order summary</p>
+        <p class="border-bottom items-name" style="width: 80%;">Order summary</p>
       </div>
       <div class="d-flex justify-content-around">
-        <p>Total(<%= @transactions.count == 1 ? "#{@transactions.count} item" : "#{@transactions.count} items" %>)</p>
+        <p>Total (<%= @transactions.count == 1 ? "#{@transactions.count} item" : "#{@transactions.count} items" %>)</p>
         £<%= "%.2f" % @transactions.map { |transaction| transaction.product.price.round(2) }.sum %>
       </div>
 
