@@ -1,8 +1,5 @@
-<div class="container3 min-height">
+<div class="container3">
   <h1 class= "d-flex justify-content-center">Orders</h1>
-  <div class="d-flex justify-content-center">
-    <%= link_to "Add a new product", new_product_path, class: "button"  %>
-  </div>
     <% if purchased_products.empty? %>
       <div>
         <p class="d-flex justify-content-center">
@@ -10,7 +7,7 @@
       </div>
     <% else %>
       <div class="d-flex justify-content-center mt-3">
-        <div class="basket d-flex justify-content-center flex-wrap">
+        <div class="basket d-flex flex-wrap <%= listed_products.count > 3 ? "justify-content-start" : "justify-content-center" %>">
           <% purchased_products.each do |product| %>
             <%= link_to product_path(product), class: "text-decoration-none text-dark" do %>
               <div class="card-product mt-3 width-50%">

@@ -1,4 +1,4 @@
-<div class="container3 min-height">
+<div class="container3">
   <h1 class= "d-flex justify-content-center">Sold Products</h1>
   <% if sold_products.empty? %>
     <div>
@@ -7,7 +7,7 @@
     </div>
   <% else %>
     <div class="d-flex justify-content-center mt-3">
-      <div class="basket d-flex justify-content-center flex-wrap">
+      <div class="basket d-flex flex-wrap <%= listed_products.count > 3 ? "justify-content-start" : "justify-content-center" %>">
         <% sold_products.each do |product| %>
           <%= link_to product_path(product), class: "text-decoration-none text-dark" do %>
             <div class="card-product mt-3 width-50%">

@@ -2,17 +2,17 @@
   <div class="banner-content text-center">
     <h1>Le Wagon Marketplace</h1>
     <p>The place for Wagoners to buy and sell items they no longer need to fellow alumni and incoming students</p>
-    <div class="d-flex justify-content-center">
-      <%= form_with url: products_path, method: :get, class: "d-flex flex-column justify-content-center" do %>
-            <div class="d-flex" style="height: 35px !important;">
-              <%= text_field_tag :buy,
-                params[:buy],
-                class: "searchTerm",
-                placeholder: "Search for an item"
-              %>
-              <%= submit_tag "Search", class: "searchButton" %>
-                <%# <i class="fa fa-search"></i> %>
-            </div>
+    <div>
+      <%= form_with url: products_path, method: :get, class: "d-flex flex-column justify-content-center", style: "width: 100%;" do %>
+        <div class="d-flex" style="height: 35px !important;">
+          <%= text_field_tag :buy,
+            params[:buy],
+            class: "searchTerm2",
+            placeholder: "Browse for items"
+          %>
+          <%= submit_tag "Search", class: "searchButton" %>
+            <%# <i class="fa fa-search"></i> %>
+        </div>
       <% end %>
     </div>
   </div>

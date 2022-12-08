@@ -42,22 +42,24 @@
   </div>
   <div class="container d-flex justify-content-around" style="width: 749px">
     <div class="d-flex justify-content-center">
-      <div class="card-product1 mb-4" style="min-height: 265px">
+      <div class="card-product1 mb-4 px-3" style="min-heigh: 265px">
         <h4 class="product-name"><%= @product.description %></h4>
-        <h4>£<%= '%.2f' % @product.price %></h4>
-        <div>
-          <div class="seller-avatar d-flex justify-content-left mt-2">
-            <%= cl_image_tag @product.user.photo.key, class: "rounded" %>
-            <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none mt-4" do %>
-              <h4><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
-            <% end %>
-            <% unless @product.user.id == current_user.id %>
-              <div class="basket-b d-flex justify-content-center mt-5 mb-5" data-controller="confirm">
-                <%= button_to "Add to basket", product_transactions_path(@product), id: :confirm, method: :post, class:"button" %>
-              </div>
-            <% end %>
+        <%# <div> %>
+          <div class="seller-avatar d-flex justify-content-between align-items-end mt-5">
+            <div class="d-flex justify-content-start align-items-center">
+              <%= cl_image_tag @product.user.photo.key, class: "show-rounded2 me-3" %>
+              <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none" do %>
+                <h4 class="d-flex align-item-center"><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
+              <% end %>
+            </div>
+            <h4 class="price1 d-flex align-items-end fw-bold fs-4 mt-3">£<%= '%.2f' % @product.price %></h4>
           </div>
-        </div>
+          <% unless @product.user.id == current_user.id %>
+            <div class="basket-b d-flex justify-content-center" data-controller="confirm">
+              <%= button_to "Add to basket", product_transactions_path(@product), id: :confirm, method: :post, class:"button" %>
+            </div>
+          <% end %>
+        <%# </div> %>
       </div>
     </div>
   </div>
