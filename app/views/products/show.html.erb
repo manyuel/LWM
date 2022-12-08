@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@product.item} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @product.description %>
-<% content_for :meta_image, cl_image_path(@product.photo.first.path) %>
+<% content_for :meta_image, cl_image_path(@product.photos.first.key) %>
 
 <div class=" mt-3">
 
