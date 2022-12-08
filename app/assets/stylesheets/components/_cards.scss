@@ -29,13 +29,13 @@
 
 .card-product {
   overflow: hidden;
-  // height: 120px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   // align-items: center;
   justify-content: space-between;
-  width: 300px;
+  width: 400px;
   margin: 5px;
   border-radius: 8px;
 }
@@ -64,8 +64,8 @@
 
 .card-product img {
   height: 100%;
-  width: 120px;
-  object-fit: cover;
+  width: 45%;
+  object-fit: fill;
 }
 
 .card-product h1 {
