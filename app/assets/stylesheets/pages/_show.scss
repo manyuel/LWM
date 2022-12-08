@@ -16,7 +16,12 @@
 }
 
 .seller-avatar{
-  margin-top: 40px;
+  display: flex;
+  align-items: baseline;
+
+
+}
+.price1{
 }
 
 .product-name{
@@ -51,19 +56,15 @@
   // // align-items: center;
   // justify-content: space-between;
 
-width: 90%;
-  margin-left: 10px;
+  width: 90%;
   padding-top: 25px;
   border-radius: 8px;
   height: 350px;
-  padding-left: 15px;
   h4{
     font-size:17px;
-    padding-left: 10px;
   }
 
   h3{
-    padding-left: 10px;
   }
 
 }
@@ -77,6 +78,8 @@ width: 90%;
   width: 50%;
 }
 
-// .price1 {
-//   font-style: italic;
-// }
+.show-rounded2 {
+  width: 6%;
+  height: 6%;
+  border-radius: 50%!important;
+}
