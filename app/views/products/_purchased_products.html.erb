@@ -13,7 +13,7 @@
         <div class="basket d-flex justify-content-center flex-wrap">
           <% purchased_products.each do |product| %>
             <%= link_to product_path(product), class: "text-decoration-none text-dark" do %>
-              <div class="card-product mt-3">
+              <div class="card-product mt-3 width-50%">
                 <%= cl_image_tag product.photos.first.key, width: 400, height: 350, crop: :fill %>
                 <ul style="list-style:none; width: 100%;" class="d-flex justify-content-between mt-1 product-card-info">
                   <div style="width: 55%" class="d-flex flex-column align-items-start justify-content-between mt-1 ms-3">

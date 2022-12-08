@@ -79,7 +79,7 @@ products = {
   'Rug' => 'Living Room & Garden',
   'Jellyfish Lamp' => 'Living Room & Garden',
   'Plant Birds of Paradise' => 'Living Room & Garden',
-  'Zamioculca plant' => 'Living Room & Garden',
+  'Zamioculca Plant' => 'Living Room & Garden',
   'Swiss Cheese Plant' => 'Living Room & Garden',
   'Mens Top' => 'Clothing',
   'Top' => 'Clothing',
@@ -124,11 +124,13 @@ product_keys = products.keys
 31.times do
   user = users.shuffle.pop
   item = product_keys.shuffle!.pop
+  description_prez = "Plants are predominantly photosynthetic eukaryotes of the kingdom Plantae. Historically, the plant kingdom encompassed all living things that were not animals, and included algae and fungi; however, all current definitions of Plantae exclude the fungi and some algae, as well as the prokaryotes (the archaea and bacteria). Will look terrific in your bedroom or living room."
+  description_general = "#{item} in #{conditions.sample} condition. It is a nice and sturdy #{item}. While I have some lovely memories with it, I no longer need it as #{phrase.sample}."
 
   product = Product.new(
     item: item,
     price: rand(1.99..49.99),
-    description: "#{item} in #{conditions.sample} condition. It is a nice and sturdy #{item}. While I have some lovely memories with it, I no longer need it as #{phrase.sample}.",
+    description: item.include?('Plant') ? description_prez : description_general,
     user_id: user.id,
     category: products[item]
   )
