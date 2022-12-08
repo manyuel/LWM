@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@product.item} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @product.description %>
-<% content_for :meta_image, cl_image_path(@product.photo.first.path) %>
+<% content_for :meta_image, cl_image_path(@product.photos.first.key) %>
 
 <div class=" mt-3">
 
@@ -44,11 +44,11 @@
     <div class="d-flex justify-content-center">
       <div class="card-product1 mb-4" style="height: 265px">
         <h4 class="product-name"><%= @product.description %></h4>
-        <h4>£<%= '%.2f' % @product.price %></h4>
+        <h4 class="price1">£<%= '%.2f' % @product.price %></h4>
         <div>
-          <div class="seller-avatar d-flex justify-content-left mt-2">
-            <%= cl_image_tag @product.user.photo.key, class: "rounded" %>
-            <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none mt-4" do %>
+          <div class="seller-avatar d-flex justify-content-left mt-3">
+            <%= cl_image_tag @product.user.photo.key, class: "show-rounded" %>
+            <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none mt-3" do %>
               <h4><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
             <% end %>
             <% unless @product.user.id == current_user.id %>
