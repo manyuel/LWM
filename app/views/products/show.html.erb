@@ -51,9 +51,11 @@
             <%=  link_to "https://lewagon-alumni.slack.com/team/#{@product.user.slack_id}", class: "user-info align-text-center text-decoration-none mt-4" do %>
               <h4><%= "#{@product.user.name} (##{@product.user.batch})"%></h4>
             <% end %>
-            <div class="basket-b d-flex justify-content-center mt-5 mb-5" data-controller="confirm">
-            <%= button_to "Add to basket", product_transactions_path(@product), id: :confirm, method: :post, class:"button" %>
-            </div>
+            <% unless @product.user.id == current_user.id %>
+              <div class="basket-b d-flex justify-content-center mt-5 mb-5" data-controller="confirm">
+                <%= button_to "Add to basket", product_transactions_path(@product), id: :confirm, method: :post, class:"button" %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
