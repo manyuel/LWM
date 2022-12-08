@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = @user
     if @product.save!
-      redirect_to my_products_path
+      redirect_to mydashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to products_path, status: :see_other
+    redirect_to mydashboard_path, status: :see_other
   end
 
   def my_products

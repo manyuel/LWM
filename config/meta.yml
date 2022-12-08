@@ -1,0 +1,5 @@
+meta_product_name: "Le Wagon Marketplace"
+meta_title: "Le Wagon Marketplace - Making student lives easier"
+meta_description: "The place for Wagoners to buy and sell items they no longer need to fellow alumni and incoming students"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
