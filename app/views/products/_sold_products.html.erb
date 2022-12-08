@@ -1,16 +1,16 @@
-
 <div class="container3 min-height">
-  <div class="listed d-flex justify-content-center">
-    <h1 class="sold">Sold Products</h1>
+  <h1 class= "d-flex justify-content-center">Sold Products</h1>
+  <div class="d-flex justify-content-center">
+    <%= link_to "Add a new product", new_product_path, class: "button"  %>
   </div>
-
   <% if sold_products.empty? %>
-    <div class="d-flex justify-content-center">
-      <p>You're yet to sell any items!</p>
+    <div>
+      <p class="d-flex justify-content-center">
+      <%="You're yet to sell any items!"%></p>
     </div>
   <% else %>
     <div class="d-flex justify-content-center mt-3">
-      <div class="basket d-flex justify-content-center" style="width: 60%;">
+      <div class="basket d-flex justify-content-center flex-wrap">
         <% sold_products.each do |product| %>
           <%= link_to product_path(product), class: "text-decoration-none text-dark" do %>
             <div class="card-product mt-3">
@@ -30,5 +30,4 @@
       </div>
     </div>
   <%end%>
-
 </div>

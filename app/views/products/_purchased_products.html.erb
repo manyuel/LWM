@@ -1,13 +1,16 @@
-<div class="d-flex justify-content-center">
-  <div class="container3 mt-3 justify-content-center" style="width: 60%;">
-     <h1 class="d-flex justify-content-center mb-3">Orders</h1>
-      <% if @purchased_products.empty? %>
-      <div class="empty">
-        <h2 class="d-flex justify-content-center"><%="You're yet to make any purchases!"%></h2>
+<div class="container3 min-height">
+  <h1 class= "d-flex justify-content-center">Orders</h1>
+  <div class="d-flex justify-content-center">
+    <%= link_to "Add a new product", new_product_path, class: "button"  %>
+  </div>
+    <% if purchased_products.empty? %>
+      <div>
+        <p class="d-flex justify-content-center">
+        <%="You're yet to make any purchases!"%></p>
       </div>
     <% else %>
       <div class="d-flex justify-content-center mt-3">
-        <div class="basket d-flex justify-content-center" style="width: 60%;">
+        <div class="basket d-flex justify-content-center flex-wrap">
           <% purchased_products.each do |product| %>
             <%= link_to product_path(product), class: "text-decoration-none text-dark" do %>
               <div class="card-product mt-3">
@@ -20,9 +23,6 @@
                 </ul>
               </div>
             <%end%>
-              <div class="pe-3">
-                <%= link_to 'X', product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary mr-0", id: "delete-x" %>
-              </div>
           <%end%>
         </div>
       </div>
