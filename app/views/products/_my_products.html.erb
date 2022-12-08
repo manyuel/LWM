@@ -1,8 +1,5 @@
-<div class="container3 min-height">
+<div class="container3">
   <h1 class= "d-flex justify-content-center">Listed Products</h1>
-  <div class="d-flex justify-content-center">
-    <%= link_to "Add a new product", new_product_path, class: "button"  %>
-  </div>
   <% if listed_products.empty? %>
     <div>
       <p class="d-flex justify-content-center">
