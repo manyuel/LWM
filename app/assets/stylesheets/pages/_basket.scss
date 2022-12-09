@@ -28,3 +28,16 @@
   width: 60%;
   margin: 0 auto;
 }
+
+.basket-card {
+  overflow: hidden;
+  height: 130px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 5px;
+  border-radius: 8px;
+}
