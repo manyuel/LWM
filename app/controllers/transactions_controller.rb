@@ -32,8 +32,8 @@ class TransactionsController < ApplicationController
           quantity: 1
         }],
         mode: 'payment',
-        success_url: Rails.env.production? ? "http://infinite-wildwood-83926.herokuapp.com/payment" : "http://localhost:3000/payment",
-        cancel_url: Rails.env.production? ? "http://infinite-wildwood-83926.herokuapp.com/basket" : "http://localhost:3000/basket"
+        success_url: Rails.env.production? ? "http://www.lewagonmarketplace.co/payment" : "http://localhost:3000/payment",
+        cancel_url: Rails.env.production? ? "http://www.lewagonmarketplace.co/basket" : "http://localhost:3000/basket"
       )
 
       @order.update(checkout_session_id: session.id)
